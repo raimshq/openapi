@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "openapi_version": "3.1.0",
+  "api_version": "1.0.0",
+  "api_revision": "c8bc745ca3c77e7ebeb23be0c1f29b6d62c1d872",
+  "api_deployment": "40617875723/1",
+  "operations": 57,
+  "files": {
+    "openapi.spec3.json": {
+      "sha256": "f61a65d623342a795eee99c64929f1babb9875e94c8a554d9b2f9e277c801eb9",
+      "bytes": 733489
+    },
+    "openapi.spec3.yaml": {
+      "sha256": "b7b6e02431220b360c862f940731913e80986505c69c5ddda14b53b4a45840a7",
+      "bytes": 608441
+    }
+  }
+}
