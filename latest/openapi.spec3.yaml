@@ -9101,7 +9101,7 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A cobrança ou o cenário não permite essa etapa. Prepare o cenário antes da ação; resolva somente uma pendência já aplicada. Use outra cobrança para testar um cenário diferente."
+          "description": "A cobrança não permite a compensação simulada. Use uma cobrança aberta com boleto já emitido e confira se há emissão ou cancelamento pendente antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
         "422":
@@ -10750,7 +10750,7 @@
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
               "$ref": "#/components/headers/IdempotencyReplayed"
-          "description": "Pedido de envio aceito. Consulte a entrega para acompanhar o resultado."
+          "description": "Pedido de teste aceito. Confira o recebimento e a assinatura nos registros do receptor."
         "400":
           "content":
             "application/json":
@@ -10823,7 +10823,7 @@
       "tags":
         - "Webhooks"
       "summary": "Enviar um evento de teste"
-      "description": "Envie webhook.test para conferir o recebimento e a validação da assinatura de um webhook ativo. A requisição não recebe corpo. O teste faz uma tentativa HTTP em até cinco minutos e não altera cobranças, saldo ou a contagem de falhas do destino. O aceite do pedido não confirma a entrega; acompanhe-a pelo delivery_id retornado."
+      "description": "Envie webhook.test para conferir o recebimento e a validação da assinatura de um webhook ativo. A requisição não recebe corpo. O teste faz uma tentativa HTTP em até cinco minutos e não altera cobranças, saldo ou a contagem de falhas do destino. O aceite do pedido não confirma a entrega. Confira o recebimento nos registros do receptor."
   "/v1/withdrawal_destinations/{id}":
     "get":
       "operationId": "GetWithdrawalDestination"
