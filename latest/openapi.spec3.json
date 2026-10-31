@@ -19,13 +19,21 @@
           "Cobranças"
         ],
         "summary": "Recuperar uma única cobrança",
-        "description": "Consulta os dados, o status e as instruções de pagamento disponíveis de uma cobrança da empresa e do ambiente da sua chave de API.",
+        "description": "Consulta os dados, o status e as instruções de pagamento disponíveis de uma cobrança da empresa e do ambiente autenticado.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -485,7 +493,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -525,14 +533,22 @@
           "Cobranças"
         ],
         "summary": "Atualizar cobrança existente",
-        "description": "Atualiza título, descrição, referência externa e dados de integração de uma cobrança da empresa e do ambiente da sua chave de API. Você pode alterar somente metadata mesmo após o pagamento ou estorno. Alterações nos demais campos continuam sujeitas ao estado da cobrança; se algum campo não puder ser alterado, nenhuma mudança da requisição será aplicada.",
+        "description": "Atualiza título, descrição, referência externa e dados de integração de uma cobrança da empresa e do ambiente autenticado. Você pode alterar somente metadata mesmo após o pagamento ou estorno. Alterações nos demais campos continuam sujeitas ao estado da cobrança; se algum campo não puder ser alterado, nenhuma mudança da requisição será aplicada.",
         "x-raims-max-body-bytes": 16384,
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -697,7 +713,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -792,13 +808,21 @@
           "Cobranças"
         ],
         "summary": "Revogar cobrança",
-        "description": "Revoga uma cobrança em aberto da empresa e do ambiente da chave de API, preservando seu histórico. No Sandbox, o cancelamento é simulado. Em Produção, a revogação pode aguardar confirmação.",
+        "description": "Revoga uma cobrança em aberto da empresa e do ambiente autenticado, preservando seu histórico. No Sandbox, o cancelamento é simulado. Em Produção, a revogação pode aguardar confirmação.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -949,7 +973,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cobrança não encontrada para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1138,13 +1162,21 @@
           "Cobranças"
         ],
         "summary": "Listar cobranças",
-        "description": "Lista cobranças da empresa e do ambiente da sua chave de API, com filtros e paginação por cursor. Para avançar, use page.next_after em after enquanto page.has_next for true, mantendo os filtros e a ordenação. Alterações de status podem levar alguns segundos para aparecer nos filtros; aguarde antes de consultar novamente.",
+        "description": "Lista cobranças da empresa e do ambiente autenticado, com filtros e paginação por cursor. Para avançar, use page.next_after em after enquanto page.has_next for true, mantendo os filtros e a ordenação. Alterações de status podem levar alguns segundos para aparecer nos filtros; aguarde antes de consultar novamente.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -1192,7 +1224,7 @@
             "name": "customer_id",
             "in": "query",
             "required": false,
-            "description": "Filtra pelo ID público completo do cliente, retornado no cadastro ou na consulta. O vínculo permanece o mesmo se nome ou e-mail mudar. Pode ser combinado com os demais filtros; mantenha o mesmo customer_id ao mudar de página. Um ID válido sem cobranças na empresa e no ambiente da chave retorna list vazio. Vazio ou ausência não aplica o filtro.",
+            "description": "Filtra pelo ID público completo do cliente, retornado no cadastro ou na consulta. O vínculo permanece o mesmo se nome ou e-mail mudar. Pode ser combinado com os demais filtros; mantenha o mesmo customer_id ao mudar de página. Um ID válido sem cobranças na empresa e no ambiente autenticado retorna list vazio. Vazio ou ausência não aplica o filtro.",
             "schema": {
               "type": "string",
               "maxLength": 100,
@@ -1717,6 +1749,11 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "requestBody": {
@@ -2453,7 +2490,7 @@
             }
           },
           "404": {
-            "description": "Nenhum cliente foi encontrado para customer_id na empresa e no ambiente da chave de API. Confira o ID e a chave usados na requisição. A cobrança não foi criada.",
+            "description": "Nenhum cliente foi encontrado para customer_id na empresa e no ambiente autenticado. Confira o ID e a autenticação usados na requisição. A cobrança não foi criada.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2557,6 +2594,9 @@
         },
         "parameters": [
           {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
+          {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
         ]
@@ -2569,11 +2609,16 @@
           "Clientes"
         ],
         "summary": "Criar cliente",
-        "description": "Cria um cliente na empresa e no ambiente da sua chave de API. Se o CPF ou CNPJ já estiver cadastrado, atualiza esse cliente e mantém seu identificador. Ao informar somente o CEP como endereço, logradouro, bairro, cidade e UF podem ser preenchidos automaticamente. Retorna 201 ao criar e 200 ao atualizar.",
+        "description": "Cria um cliente na empresa e no ambiente autenticado. Se o CPF ou CNPJ já estiver cadastrado, atualiza esse cliente e mantém seu identificador. Ao informar somente o CEP como endereço, logradouro, bairro, cidade e UF podem ser preenchidos automaticamente. Retorna 201 ao criar e 200 ao atualizar.",
         "x-raims-max-body-bytes": 16384,
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "requestBody": {
@@ -2790,6 +2835,9 @@
         },
         "parameters": [
           {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
+          {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
         ]
@@ -2800,13 +2848,21 @@
           "Clientes"
         ],
         "summary": "Listar clientes",
-        "description": "Lista os clientes da empresa e do ambiente da chave conforme os filtros informados, com paginação por cursor. Envie os parâmetros na URL, sem corpo na requisição.",
+        "description": "Lista os clientes da empresa e do ambiente autenticado conforme os filtros informados, com paginação por cursor. Envie os parâmetros na URL, sem corpo na requisição.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -3135,10 +3191,15 @@
           "Clientes"
         ],
         "summary": "Remover clientes em lote",
-        "description": "Remove até 100 clientes da empresa e do ambiente da sua chave em uma requisição. Confira o resultado de cada identificador em removed, blocked ou invalid. Cobranças não removidas impedem a remoção do cliente, inclusive quando pagas. Identificadores repetidos são processados uma vez; clientes já removidos aparecem em removed. A remoção de clientes não remove cobranças nem devolve valores.",
+        "description": "Remove até 100 clientes da empresa e do ambiente autenticado em uma requisição. Confira o resultado de cada identificador em removed, blocked ou invalid. Cobranças não removidas impedem a remoção do cliente, inclusive quando pagas. Identificadores repetidos são processados uma vez; clientes já removidos aparecem em removed. A remoção de clientes não remove cobranças nem devolve valores.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "responses": {
@@ -3260,6 +3321,9 @@
         },
         "parameters": [
           {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
+          {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
         ]
@@ -3272,13 +3336,21 @@
           "Clientes"
         ],
         "summary": "Recuperar um único cliente",
-        "description": "Consulta os dados cadastrais de um cliente pelo identificador público na empresa e no ambiente da chave de API. A requisição não tem corpo.",
+        "description": "Consulta os dados cadastrais de um cliente pelo identificador público na empresa e no ambiente autenticado. A requisição não tem corpo.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -3371,7 +3443,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cliente não encontrado para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cliente não encontrado para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3411,13 +3483,21 @@
           "Clientes"
         ],
         "summary": "Remover cliente",
-        "description": "Remove um cliente pelo identificador público na empresa e no ambiente da chave de API. A remoção é permitida somente quando não há cobranças vinculadas ainda não removidas, inclusive pagas. Não remove cobranças nem devolve valores. Repetir a requisição para o mesmo cadastro já removido retorna o mesmo identificador com deleted: true. A requisição não tem corpo.",
+        "description": "Remove um cliente pelo identificador público na empresa e no ambiente autenticado. A remoção é permitida somente quando não há cobranças vinculadas ainda não removidas, inclusive pagas. Não remove cobranças nem devolve valores. Repetir a requisição para o mesmo cadastro já removido retorna o mesmo identificador com deleted: true. A requisição não tem corpo.",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -3492,7 +3572,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cliente não encontrado para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cliente não encontrado para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3575,9 +3655,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -3755,7 +3843,7 @@
             "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Cliente não encontrado para o id informado na empresa e no ambiente da chave de API. Confira o identificador.",
+            "description": "Cliente não encontrado para o id informado na empresa e no ambiente autenticado. Confira o identificador.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3808,6 +3896,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -3867,6 +3965,9 @@
             },
             "description": "Tarifas do plano selecionado para cada meio de pagamento, incluindo as condições específicas vigentes da empresa. Os valores monetários estão em centavos de real. Um meio sem regra vigente retorna null; isso não indica gratuidade nem informa se o meio está habilitado no checkout."
           },
+          "400": {
+            "$ref": "#/components/responses/InvalidAuthenticationEnvironment"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
@@ -3896,9 +3997,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -4153,9 +4262,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -4404,12 +4521,153 @@
         "description": "Simule a falha de uma cobrança aberta para testar o tratamento desse resultado no Sandbox."
       }
     },
+    "/v1/accounts/context": {
+      "get": {
+        "operationId": "GetAccountContext",
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountContext"
+                },
+                "example": {
+                  "company_id": "co_3AbHiWSrsZBoaTg47OcMzC",
+                  "company_name": "Loja Exemplo Ltda.",
+                  "company_status": "active",
+                  "data_environment": "sandbox",
+                  "checked_at": 1793289600,
+                  "access_revision": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "currency": "BRL",
+                  "amount_unit": "cents",
+                  "timestamp_unit": "unix_seconds",
+                  "business_timezone": "America/Sao_Paulo"
+                }
+              }
+            },
+            "headers": {
+              "Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/LegacyRequestId"
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "no-store"
+                },
+                "description": "O contexto da conta não deve ser armazenado em cache."
+              }
+            },
+            "description": "Contexto atual da conta autenticada."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "query_not_supported": {
+                    "summary": "Parâmetro de consulta não permitido",
+                    "value": {
+                      "error": {
+                        "code": "INVALID_FIELDS",
+                        "message": "One or more request fields are invalid.",
+                        "details": [
+                          {
+                            "field": "company_id",
+                            "code": "UNKNOWN_QUERY_PARAMETER",
+                            "message": "company_id is not a supported query parameter. Remove it from the request URL."
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "body_not_supported": {
+                    "summary": "Corpo não permitido",
+                    "value": {
+                      "error": {
+                        "code": "INVALID_FIELDS",
+                        "message": "One or more request fields are invalid.",
+                        "details": [
+                          {
+                            "field": "$",
+                            "code": "BODY_NOT_ALLOWED",
+                            "message": "This endpoint does not accept a request body. Remove the body and try again."
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/LegacyRequestId"
+              }
+            },
+            "description": "A requisição contém corpo ou parâmetros de consulta. Remova esses dados e envie somente a autenticação."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          },
+          "503": {
+            "$ref": "#/components/responses/StoreUnavailable"
+          }
+        },
+        "summary": "Consultar contexto da conta",
+        "tags": [
+          "Informações da conta"
+        ],
+        "description": "Consulte a identidade pública, o nome empresarial, a situação cadastral e o ambiente da conta identificada pela chave. Use a data e a revisão da resposta para reconhecer informações antigas. Esta leitura não identifica a pessoa que criou a chave e não confirma que uma operação financeira pode ser executada."
+      }
+    },
     "/v1/accounts/account_number": {
       "get": {
         "operationId": "GetAccountNumber",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -4583,6 +4841,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -4749,9 +5017,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -5040,9 +5316,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "period",
             "in": "query",
@@ -5210,6 +5494,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -5254,7 +5548,10 @@
                 "description": "Os saldos não devem ser armazenados em cache."
               }
             },
-            "description": "Saldos atuais da empresa e do ambiente da chave. Sem saldo registrado, retorna valores zerados."
+            "description": "Saldos atuais da empresa e do ambiente autenticado. Sem saldo registrado, retorna valores zerados."
+          },
+          "400": {
+            "$ref": "#/components/responses/InvalidAuthenticationEnvironment"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -5276,7 +5573,7 @@
           "Saldo"
         ],
         "summary": "Recuperar saldo atual",
-        "description": "Consulta os valores total, bloqueado e disponível na empresa e no ambiente da chave de API. Os valores são expressos em centavos de real. O saldo disponível considera os bloqueios e não confirma a autorização de um saque ou estorno."
+        "description": "Consulta os valores total, bloqueado e disponível na empresa e no ambiente autenticado. Os valores são expressos em centavos de real. O saldo disponível considera os bloqueios e não confirma a autorização de um saque ou estorno."
       }
     },
     "/v1/charges/{id}/payment": {
@@ -5285,9 +5582,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -5482,7 +5787,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -5527,7 +5832,7 @@
           "Cobranças"
         ],
         "summary": "Consultar dados do pagamento",
-        "description": "Consulte o valor, a data e o meio de pagamento confirmado de uma cobrança. Nos recebimentos Pix, end_to_end_id informa o identificador bancário quando disponível. A cobrança precisa estar paga, parcialmente estornada ou com contestação ganha, com a data do pagamento registrada. A consulta considera a empresa e o ambiente da sua chave de API."
+        "description": "Consulte o valor, a data e o meio de pagamento confirmado de uma cobrança. Nos recebimentos Pix, end_to_end_id informa o identificador bancário quando disponível. A cobrança precisa estar paga, parcialmente estornada ou com contestação ganha, com a data do pagamento registrada. A consulta considera a empresa e o ambiente autenticado."
       }
     },
     "/v1/charges/{id}/receipt": {
@@ -5536,9 +5841,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -5651,7 +5964,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -5705,9 +6018,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -5820,7 +6141,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -5901,9 +6222,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -6173,7 +6502,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -6334,9 +6663,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -6586,7 +6923,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -6614,9 +6951,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -6867,7 +7212,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -6895,9 +7240,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "period",
             "in": "query",
@@ -7076,7 +7429,7 @@
           "Cobranças"
         ],
         "summary": "Consultar estatísticas de cobranças",
-        "description": "Consulte quantidades, valores e taxa de pagamento das cobranças para acompanhar seus recebimentos no ERP ou sistema de gestão. A consulta considera a empresa e o ambiente da sua chave de API. Os dados podem levar alguns segundos para refletir alterações nas cobranças."
+        "description": "Consulte quantidades, valores e taxa de pagamento das cobranças para acompanhar seus recebimentos no ERP ou sistema de gestão. A consulta considera a empresa e o ambiente autenticado. Os dados podem levar alguns segundos para refletir alterações nas cobranças."
       }
     },
     "/v1/accounts/checkout_settings/logo_uploads": {
@@ -7085,9 +7438,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -7266,9 +7627,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -7447,9 +7816,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -7639,6 +8016,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -7777,7 +8164,7 @@
                 "description": "A resposta não deve ser armazenada em cache."
               }
             },
-            "description": "Configuração atual do checkout no ambiente da chave. Os meios de pagamento são somente para consulta. As imagens informam o endereço atual e o resultado da última alteração."
+            "description": "Configuração atual do checkout no ambiente autenticado. Os meios de pagamento são somente para consulta. As imagens informam o endereço atual e o resultado da última alteração."
           },
           "400": {
             "content": {
@@ -7880,16 +8267,24 @@
           "Informações e personalização da conta"
         ],
         "summary": "Consultar personalização do checkout",
-        "description": "Consulte as imagens, as cores, o e-mail de suporte e os meios de pagamento padrão do checkout da empresa no ambiente da chave."
+        "description": "Consulte as imagens, as cores, o e-mail de suporte e os meios de pagamento padrão do checkout da empresa no ambiente autenticado."
       },
       "patch": {
         "operationId": "UpdateCheckoutSettings",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -8033,7 +8428,7 @@
                 "$ref": "#/components/headers/IdempotencyReplayed"
               }
             },
-            "description": "Configuração atual do checkout no ambiente da chave. Os meios de pagamento são somente para consulta. As imagens informam o endereço atual e o resultado da última alteração."
+            "description": "Configuração atual do checkout no ambiente autenticado. Os meios de pagamento são somente para consulta. As imagens informam o endereço atual e o resultado da última alteração."
           },
           "202": {
             "content": {
@@ -8318,9 +8713,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -8530,7 +8933,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Contestação não encontrada na empresa e no ambiente da chave. A resposta também é usada quando o caso não está disponível para a chave utilizada."
+            "description": "Contestação não encontrada na empresa e no ambiente autenticado. A resposta também é usada quando o caso não está disponível para a autenticação utilizada."
           },
           "429": {
             "$ref": "#/components/responses/RateLimited"
@@ -8546,7 +8949,7 @@
           "Contestações"
         ],
         "summary": "Recuperar uma contestação",
-        "description": "Consulta a etapa, os motivos e os resultados disponíveis de uma contestação da empresa e do ambiente da chave."
+        "description": "Consulta a etapa, os motivos e os resultados disponíveis de uma contestação da empresa e do ambiente autenticado."
       }
     },
     "/v1/disputes": {
@@ -8555,9 +8958,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -8883,7 +9294,7 @@
           "Contestações"
         ],
         "summary": "Listar contestações",
-        "description": "Consulta as contestações da empresa e do ambiente da chave, com filtros e paginação por cursor."
+        "description": "Consulta as contestações da empresa e do ambiente autenticado, com filtros e paginação por cursor."
       }
     },
     "/v1/payment_links/{id}/send_email": {
@@ -8892,9 +9303,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -9069,7 +9488,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Link não encontrado na empresa e no ambiente da chave."
+            "description": "Link não encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -9210,9 +9629,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -9511,7 +9938,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -9596,9 +10023,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -9808,7 +10243,7 @@
           "Links de pagamentos"
         ],
         "summary": "Listar links de pagamento",
-        "description": "Lista os links da empresa e do ambiente da chave, pela ordem decrescente das cobranças vinculadas. Use charge_id para localizar o link de uma cobrança e page.next_after para continuar."
+        "description": "Lista os links da empresa e do ambiente autenticado, pela ordem decrescente das cobranças vinculadas. Use charge_id para localizar o link de uma cobrança e page.next_after para continuar."
       }
     },
     "/v1/payment_links/{id}": {
@@ -9817,9 +10252,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -10095,7 +10538,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Link não encontrado na empresa e no ambiente da chave."
+            "description": "Link não encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -10114,16 +10557,24 @@
           "Links de pagamentos"
         ],
         "summary": "Recuperar um link de pagamento",
-        "description": "Consulta a URL, a configuração e a disponibilidade atual do link. is_active informa se o link está ativo; is_payable indica se o checkout pode receber pagamento neste momento. O link precisa pertencer à empresa e ao ambiente da chave. Para valor, vencimento, cliente e status financeiro, use GET /v1/charges/{charge_id}."
+        "description": "Consulta a URL, a configuração e a disponibilidade atual do link. is_active informa se o link está ativo; is_payable indica se o checkout pode receber pagamento neste momento. O link precisa pertencer à empresa e ao ambiente autenticado. Para valor, vencimento, cliente e status financeiro, use GET /v1/charges/{charge_id}."
       },
       "patch": {
         "operationId": "UpdatePaymentLink",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -10475,7 +10926,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Link não encontrado na empresa e no ambiente da chave."
+            "description": "Link não encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -10562,9 +11013,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -10677,7 +11136,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Estorno ou dados da cobrança original não encontrados na empresa e no ambiente da chave."
+            "description": "Estorno ou dados da cobrança original não encontrados na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -10731,9 +11190,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -10868,7 +11335,7 @@
                 "description": "Os dados desta resposta não devem ser armazenados em cache."
               }
             },
-            "description": "Página de solicitações de estorno da empresa e do ambiente da chave. Uma lista vazia informa que não há solicitações nessa página."
+            "description": "Página de solicitações de estorno da empresa e do ambiente autenticado. Uma lista vazia informa que não há solicitações nessa página."
           },
           "400": {
             "content": {
@@ -10950,7 +11417,7 @@
           "Estornos"
         ],
         "summary": "Listar estornos",
-        "description": "Lista as solicitações de estorno das cobranças da empresa e do ambiente da chave, das mais recentes para as mais antigas. Use a paginação para conciliar as devoluções sem consultar cada cobrança. A consulta não inicia nem repete estornos."
+        "description": "Lista as solicitações de estorno das cobranças da empresa e do ambiente autenticado, das mais recentes para as mais antigas. Use a paginação para conciliar as devoluções sem consultar cada cobrança. A consulta não inicia nem repete estornos."
       }
     },
     "/v1/refunds/{id}": {
@@ -10959,9 +11426,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -11194,7 +11669,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Estorno não encontrado na empresa e no ambiente da chave."
+            "description": "Estorno não encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -11222,9 +11697,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -11468,9 +11951,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -11717,9 +12208,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -12002,9 +12501,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -12287,9 +12794,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -12776,9 +13291,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -13019,9 +13542,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -13298,7 +13829,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Cobrança não encontrada na empresa e no ambiente da chave."
+            "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -13440,9 +13971,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -13579,7 +14118,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Lançamento não encontrado na empresa e no ambiente da chave."
+            "description": "Lançamento não encontrado na empresa e no ambiente autenticado."
           },
           "429": {
             "$ref": "#/components/responses/RateLimited"
@@ -13595,7 +14134,7 @@
           "Extrato"
         ],
         "summary": "Recuperar um lançamento",
-        "description": "Consulta um lançamento do extrato pelo ID, com seus valores e vínculos disponíveis, na empresa e no ambiente da chave de API."
+        "description": "Consulta um lançamento do extrato pelo ID, com seus valores e vínculos disponíveis, na empresa e no ambiente autenticado."
       }
     },
     "/v1/statements": {
@@ -13604,9 +14143,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -13835,7 +14382,7 @@
           "Extrato"
         ],
         "summary": "Recuperar extrato",
-        "description": "Consulte os lançamentos do extrato da empresa e do ambiente da sua chave de API. Filtre por período, tipo de lançamento ou referência e percorra os resultados com os cursores retornados. Valores positivos representam entradas ou liberações; valores negativos representam saídas, tarifas ou bloqueios. Uma confirmação financeira pode levar alguns instantes para aparecer no extrato."
+        "description": "Consulte os lançamentos do extrato da empresa e do ambiente autenticado. Filtre por período, tipo de lançamento ou referência e percorra os resultados com os cursores retornados. Valores positivos representam entradas ou liberações; valores negativos representam saídas, tarifas ou bloqueios. Uma confirmação financeira pode levar alguns instantes para aparecer no extrato."
       }
     },
     "/v1/webhook_event_types": {
@@ -13844,6 +14391,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -13957,9 +14514,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "webhook_id",
             "in": "path",
@@ -14084,7 +14649,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O webhook não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O webhook não foi encontrado na empresa e no ambiente autenticado."
           },
           "429": {
             "$ref": "#/components/responses/RateLimited"
@@ -14109,9 +14674,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -14261,7 +14834,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "Webhook não encontrado na empresa e no ambiente da chave."
+            "description": "Webhook não encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -14341,9 +14914,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -14481,16 +15062,24 @@
           "Webhooks"
         ],
         "summary": "Listar webhooks",
-        "description": "Consulte os destinos cadastrados na empresa e no ambiente da sua chave de API, incluindo os desativados. Para avançar, copie page.next_after para after. A listagem não retorna segredos de assinatura."
+        "description": "Consulte os destinos cadastrados na empresa e no ambiente autenticado, incluindo os desativados. Para avançar, copie page.next_after para after. A listagem não retorna segredos de assinatura."
       },
       "post": {
         "operationId": "CreateWebhook",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -14683,7 +15272,7 @@
           "Webhooks"
         ],
         "summary": "Criar um webhook",
-        "description": "Cadastre o endereço HTTPS que receberá os eventos escolhidos da empresa e do ambiente da sua chave de API. Guarde o id para administrar o destino e o secret_key para validar as assinaturas. As consultas do cadastro não retornam o segredo."
+        "description": "Cadastre o endereço HTTPS que receberá os eventos escolhidos da empresa e do ambiente autenticado. Guarde o id para administrar o destino e o secret_key para validar as assinaturas. As consultas do cadastro não retornam o segredo."
       }
     },
     "/v1/webhooks/{webhook_id}": {
@@ -14692,9 +15281,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "webhook_id",
             "in": "path",
@@ -14809,7 +15406,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O recurso não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
           },
           "429": {
             "$ref": "#/components/responses/RateLimited"
@@ -14832,9 +15429,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -14975,7 +15580,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O recurso não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -15052,9 +15657,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -15155,7 +15768,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O recurso não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -15186,9 +15799,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -15315,7 +15936,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O recurso não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "$ref": "#/components/responses/RequestInProgress"
@@ -15352,9 +15973,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           },
@@ -15472,7 +16101,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O recurso não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
           },
           "409": {
             "content": {
@@ -15535,9 +16164,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -15711,9 +16348,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -15923,6 +16568,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -15984,6 +16639,9 @@
             },
             "description": "Condições atuais de saque. Em Produção, informa se há destino cadastrado e os limites disponíveis para consulta. No Sandbox, retorna o saldo simulado, destination_configured false e limits null."
           },
+          "400": {
+            "$ref": "#/components/responses/InvalidAuthenticationEnvironment"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
@@ -16013,9 +16671,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "$ref": "#/components/parameters/IdempotencyKey"
           }
@@ -16032,7 +16698,7 @@
               }
             }
           },
-          "description": "Valor que deseja retirar da conta Raims. O destino é a chave Pix padrão da empresa; a requisição não cadastra nem altera o destino."
+          "description": "Valor que deseja retirar da conta Raims e, opcionalmente, o ID do destino padrão esperado. A requisição não cadastra nem altera o destino."
         },
         "x-raims-max-body-bytes": 16384,
         "responses": {
@@ -16396,6 +17062,15 @@
                         "message": "The withdrawal request result could not be confirmed. Retrieve the withdrawal identified by the Location header before making another request."
                       }
                     }
+                  },
+                  "expected_destination_changed": {
+                    "summary": "Destino padrão diferente do esperado",
+                    "value": {
+                      "error": {
+                        "code": "WITHDRAWAL_DESTINATION_CHANGED",
+                        "message": "The expected withdrawal destination is no longer the verified default. Retrieve the current withdrawal destinations and review the request before trying again."
+                      }
+                    }
                   }
                 }
               }
@@ -16439,16 +17114,24 @@
           "Saques"
         ],
         "summary": "Solicitar saque",
-        "description": "Solicite um saque Pix para a chave padrão da própria empresa cadastrada no Dashboard. O valor solicitado inclui a tarifa. Guarde o identificador e acompanhe o mesmo saque enquanto o resultado estiver pendente."
+        "description": "Solicite um saque Pix para a chave padrão da própria empresa cadastrada no Dashboard. O valor solicitado inclui a tarifa. Para exigir o destino padrão que você conferiu, informe expected_destination_id. Guarde o identificador e acompanhe o mesmo saque enquanto o resultado estiver pendente."
       },
       "get": {
         "operationId": "ListWithdrawals",
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "page_size",
             "in": "query",
@@ -16715,7 +17398,7 @@
           "Saques"
         ],
         "summary": "Listar saques",
-        "description": "Consulte o histórico de saques da sua empresa. Use os filtros de status e período para acompanhar as transferências e conferir as saídas do extrato. A consulta considera o ambiente da sua chave de API."
+        "description": "Consulte o histórico de saques da sua empresa. Use os filtros de status e período para acompanhar as transferências e conferir as saídas do extrato. A consulta considera o ambiente autenticado."
       }
     },
     "/v1/withdrawals/{id}": {
@@ -16724,9 +17407,17 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
+          },
           {
             "name": "id",
             "in": "path",
@@ -16899,7 +17590,7 @@
                 "$ref": "#/components/headers/LegacyRequestId"
               }
             },
-            "description": "O saque não foi encontrado na empresa e no ambiente da chave de API."
+            "description": "O saque não foi encontrado na empresa e no ambiente autenticado."
           },
           "429": {
             "$ref": "#/components/responses/RateLimited"
@@ -16924,6 +17615,16 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApplicationOAuth": [
+              "raims:api"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/OAuthEnvironment"
           }
         ],
         "responses": {
@@ -17055,6 +17756,35 @@
     }
   },
   "components": {
+    "parameters": {
+      "OAuthEnvironment": {
+        "name": "X-Raims-Environment",
+        "in": "header",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Sandbox",
+            "Production"
+          ],
+          "example": "Sandbox"
+        },
+        "description": "Ambiente da requisição. Obrigatório ao usar um token OAuth: Sandbox para testes ou Production para dados reais. Com uma chave de API, você pode omitir o header; se o informar, ele deve corresponder ao ambiente da chave."
+      },
+      "IdempotencyKey": {
+        "name": "Idempotency-Key",
+        "in": "header",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^[!-~]{1,255}$",
+          "example": "b2816b4f-7c18-4bc4-a1d4-fc01cde750d0"
+        },
+        "description": "Chave única escolhida pelo seu sistema para identificar esta requisição. Ao repetir a tentativa, envie a mesma chave e os mesmos parâmetros. Sem este header, a requisição é processada normalmente. Consulte o guia de idempotência para os prazos e o tratamento de respostas pendentes ou incertas."
+      }
+    },
     "headers": {
       "RequestId": {
         "required": true,
@@ -17412,7 +18142,7 @@
         "properties": {
           "list": {
             "type": "array",
-            "description": "Cobranças encontradas na empresa e no ambiente da chave.",
+            "description": "Cobranças encontradas na empresa e no ambiente autenticado.",
             "items": {
               "$ref": "#/components/schemas/ChargeListItem"
             }
@@ -17437,7 +18167,7 @@
             "maxLength": 100,
             "pattern": "^cus_[A-Za-z0-9]+$",
             "example": "cus_1Q2W3E4R5T6Y7U8I9O0P",
-            "description": "ID de um cliente da empresa e do ambiente da chave de API. Copie o id retornado no cadastro ou na consulta. Pix direto exige CPF/CNPJ válido. Boleto direto exige nome, e-mail válido, CPF/CNPJ e endereço, incluindo CEP e número; complete esses dados no cadastro do cliente."
+            "description": "ID de um cliente da empresa e do ambiente autenticado. Copie o id retornado no cadastro ou na consulta. Pix direto exige CPF/CNPJ válido. Boleto direto exige nome, e-mail válido, CPF/CNPJ e endereço, incluindo CEP e número; complete esses dados no cadastro do cliente."
           },
           "amount_cents": {
             "type": "integer",
@@ -17935,7 +18665,7 @@
         "properties": {
           "list": {
             "type": "array",
-            "description": "Clientes encontrados na empresa e no ambiente da chave.",
+            "description": "Clientes encontrados na empresa e no ambiente autenticado.",
             "items": {
               "$ref": "#/components/schemas/CustomerListItem"
             }
@@ -17977,7 +18707,7 @@
                 "null"
               ]
             },
-            "description": "Valores inválidos, de clientes inexistentes ou de clientes que sua chave de API não pode acessar."
+            "description": "Valores inválidos, de clientes inexistentes ou de clientes que sua autenticação não permite acessar."
           },
           "errors": {
             "type": "array",
@@ -18376,6 +19106,95 @@
           }
         },
         "description": "Resultado da simulação registrada na cobrança do Sandbox. Consulte saldo e extrato nos respectivos recursos."
+      },
+      "AccountContext": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "company_id",
+          "company_name",
+          "company_status",
+          "data_environment",
+          "checked_at",
+          "access_revision",
+          "currency",
+          "amount_unit",
+          "timestamp_unit",
+          "business_timezone"
+        ],
+        "properties": {
+          "company_id": {
+            "type": "string",
+            "pattern": "^co_[A-Za-z0-9]+$",
+            "description": "Identificador público da empresa na Raims."
+          },
+          "company_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Nome empresarial da conta, ou null quando não disponível."
+          },
+          "company_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "active",
+              "limited"
+            ],
+            "description": "Situação cadastral da empresa na Raims. As condições de cada operação continuam sendo verificadas na requisição."
+          },
+          "data_environment": {
+            "type": "string",
+            "enum": [
+              "sandbox",
+              "production"
+            ],
+            "description": "Ambiente dos recursos acessados pela chave usada nesta consulta."
+          },
+          "checked_at": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0,
+            "description": "Instante da consulta, em segundos Unix UTC."
+          },
+          "access_revision": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "Revisão do contexto consultado. Compare-a com outra resposta para reconhecer alterações de identidade, situação ou acesso. Não é uma autorização para executar operações."
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "BRL"
+            ],
+            "description": "Moeda dos valores financeiros em reais."
+          },
+          "amount_unit": {
+            "type": "string",
+            "enum": [
+              "cents"
+            ],
+            "description": "Unidade dos valores monetários inteiros: cents representa centavos de real."
+          },
+          "timestamp_unit": {
+            "type": "string",
+            "enum": [
+              "unix_seconds"
+            ],
+            "description": "Formato dos instantes: unix_seconds representa segundos Unix UTC."
+          },
+          "business_timezone": {
+            "type": "string",
+            "enum": [
+              "America/Sao_Paulo"
+            ],
+            "description": "Fuso usado nas datas e janelas de negócio da conta."
+          }
+        },
+        "description": "Identidade e referências de interpretação da conta autenticada. Não inclui credenciais, dados bancários ou identidade de usuário."
       },
       "AccountNumber": {
         "type": "object",
@@ -19013,7 +19832,7 @@
             "description": "Prazo de validade da autorização de envio, em segundos Unix UTC."
           }
         },
-        "description": "Autorização temporária para enviar um arquivo de imagem da empresa, no ambiente da chave."
+        "description": "Autorização temporária para enviar um arquivo de imagem da empresa, no ambiente autenticado."
       },
       "CreateCheckoutFaviconUploadRequest": {
         "type": "object",
@@ -19141,7 +19960,7 @@
             "description": "Imagem atual e andamento da última alteração."
           }
         },
-        "description": "Imagens, cores, contato de suporte e meios padrão do checkout no ambiente da chave."
+        "description": "Imagens, cores, contato de suporte e meios padrão do checkout no ambiente autenticado."
       },
       "UpdateCheckoutSettingsRequest": {
         "type": "object",
@@ -20860,6 +21679,16 @@
             "maximum": 1000000000000,
             "description": "Valor total a retirar, em centavos de real, incluindo a tarifa. Consulte as condições de saque para conferir saldo, tarifa e limites antes de solicitar.",
             "example": 25000
+          },
+          "expected_destination_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100,
+            "pattern": "^wdst_[A-Za-z0-9]+$",
+            "description": "ID do destino próprio que deve continuar selecionado como padrão. Copie o id retornado na consulta dos destinos. Se o destino mudar ou deixar de ser válido, o saque é recusado. Omitir ou enviar null usa o destino padrão vigente.",
+            "example": "wdst_3AbHiWSrsZBoaTg47OcMzC"
           }
         },
         "description": "Valor total solicitado para o saque Pix. A tarifa, quando aplicável, é descontada desse valor."
@@ -22243,7 +23072,7 @@
     },
     "responses": {
       "Unauthorized": {
-        "description": "Informe uma chave de API válida no header Authorization: Bearer.",
+        "description": "Informe uma chave de API válida ou um access token OAuth válido no header Authorization: Bearer. Para OAuth expirado, renove a sessão ou autorize o aplicativo novamente.",
         "content": {
           "application/json": {
             "schema": {
@@ -22252,7 +23081,7 @@
             "example": {
               "error": {
                 "code": "UNAUTHORIZED",
-                "message": "Provide a valid API key in the Authorization: Bearer header."
+                "message": "Provide a valid API key or OAuth access token in the Authorization: Bearer header."
               }
             }
           }
@@ -22325,6 +23154,33 @@
                   "error": {
                     "code": "COMPANY_STATUS_RESTRICTED",
                     "message": "The company's current status does not allow this request. Check the company's status in the Dashboard."
+                  }
+                }
+              },
+              "oauth_scope": {
+                "summary": "Requisição fora das permissões autorizadas",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_SCOPE_FORBIDDEN",
+                    "message": "The OAuth connection does not allow this request. Review the application's permissions in the Dashboard."
+                  }
+                }
+              },
+              "oauth_environment": {
+                "summary": "Ambiente fora da autorização",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_ENVIRONMENT_FORBIDDEN",
+                    "message": "The OAuth connection does not allow the selected environment. Select an authorized environment."
+                  }
+                }
+              },
+              "credential_environment": {
+                "summary": "Ambiente diferente do permitido pela chave",
+                "value": {
+                  "error": {
+                    "code": "CREDENTIAL_ENVIRONMENT_MISMATCH",
+                    "message": "The selected environment does not match the API key. Select its environment or use another credential."
                   }
                 }
               }
@@ -22497,6 +23353,24 @@
                     "message": "Request admission is temporarily unavailable. Wait for Retry-After before trying again."
                   }
                 }
+              },
+              "oauth_unavailable": {
+                "summary": "Autorização temporariamente indisponível",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_AUTHORIZATION_UNAVAILABLE",
+                    "message": "The current OAuth authorization could not be confirmed. Try again later."
+                  }
+                }
+              },
+              "oauth_authorization_changed": {
+                "summary": "Resultado da requisição exige consulta",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_AUTHORIZATION_CHANGED",
+                    "message": "The request may have completed, but its result could not be delivered because authorization changed or could not be confirmed. Restore access and check the resource before retrying. Preserve the same Idempotency-Key when one was supplied."
+                  }
+                }
               }
             }
           }
@@ -22648,6 +23522,58 @@
           }
         }
       },
+      "InvalidAuthenticationEnvironment": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "examples": {
+              "environment_required": {
+                "summary": "Ambiente não informado para OAuth",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_ENVIRONMENT_REQUIRED",
+                    "message": "Select Sandbox or Production with the X-Raims-Environment header when using OAuth.",
+                    "details": [
+                      {
+                        "field": "X-Raims-Environment",
+                        "code": "REQUIRED",
+                        "message": "X-Raims-Environment is required."
+                      }
+                    ]
+                  }
+                }
+              },
+              "environment_invalid": {
+                "summary": "Header de ambiente inválido",
+                "value": {
+                  "error": {
+                    "code": "OAUTH_ENVIRONMENT_INVALID",
+                    "message": "The X-Raims-Environment header must contain exactly one value: Sandbox or Production.",
+                    "details": [
+                      {
+                        "field": "X-Raims-Environment",
+                        "code": "INVALID_VALUE",
+                        "message": "X-Raims-Environment must contain one of the supported values documented for this field."
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "headers": {
+          "Request-Id": {
+            "$ref": "#/components/headers/RequestId"
+          },
+          "X-Request-Id": {
+            "$ref": "#/components/headers/LegacyRequestId"
+          }
+        },
+        "description": "Informe X-Raims-Environment com Sandbox ou Production ao usar OAuth. Com chave de API, um valor informado precisa ser válido e corresponder ao ambiente da chave."
+      },
       "BadGateway": {
         "description": "O pedido foi recusado durante o processamento e não há devolução confirmada. Consulte o histórico da cobrança antes de tentar novamente.",
         "content": {
@@ -22673,27 +23599,26 @@
         }
       }
     },
-    "parameters": {
-      "IdempotencyKey": {
-        "name": "Idempotency-Key",
-        "in": "header",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 255,
-          "pattern": "^[!-~]{1,255}$",
-          "example": "b2816b4f-7c18-4bc4-a1d4-fc01cde750d0"
-        },
-        "description": "Chave única escolhida pelo seu sistema para identificar esta requisição. Ao repetir a tentativa, envie a mesma chave e os mesmos parâmetros. Sem este header, a requisição é processada normalmente. Consulte o guia de idempotência para os prazos e o tratamento de respostas pendentes ou incertas."
-      }
-    },
     "securitySchemes": {
       "BearerAuth": {
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "Chave API Raims",
-        "description": "Authorization: Bearer sk_test_... para desenvolvimento Sandbox."
+        "description": "Envie a chave de API emitida pela Raims em Authorization: Bearer. A chave determina a empresa e o ambiente da requisição."
+      },
+      "ApplicationOAuth": {
+        "type": "oauth2",
+        "x-raims-resource": "https://api.raims.com",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://internal-api.raims.com/oauth/authorize",
+            "tokenUrl": "https://internal-api.raims.com/oauth/token",
+            "scopes": {
+              "raims:api": "Acesso às operações autorizadas da conta."
+            }
+          }
+        },
+        "description": "Autorize o aplicativo na Raims pelo fluxo authorization code com PKCE S256. Informe resource=https://api.raims.com na autorização e na troca ou renovação do token. Envie o access token em Authorization: Bearer e selecione o ambiente com X-Raims-Environment. O acesso permanece limitado à conta, aos ambientes e às permissões autorizadas."
       }
     }
   }
