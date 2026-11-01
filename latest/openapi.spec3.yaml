@@ -431,6 +431,10 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
     "patch":
       "operationId": "UpdateCharge"
       "tags":
@@ -620,6 +624,10 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "charges_update"
+        "resource": "charges"
+        "access": "write"
     "delete":
       "operationId": "RevokeCharge"
       "tags":
@@ -853,6 +861,10 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
+      "x-raims-api-key-permission":
+        "code": "charges_revoke"
+        "resource": "charges"
+        "access": "write"
   "/v1/charges":
     "get":
       "operationId": "ListCharges"
@@ -1281,6 +1293,10 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
     "post":
       "operationId": "CreateCharge"
       "tags":
@@ -1925,6 +1941,10 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
+      "x-raims-api-key-permission":
+        "code": "charges_create"
+        "resource": "charges"
+        "access": "write"
       "parameters":
         -
           "$ref": "#/components/parameters/OAuthEnvironment"
@@ -2090,6 +2110,10 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "customers_create"
+        "resource": "customers"
+        "access": "write"
       "parameters":
         -
           "$ref": "#/components/parameters/OAuthEnvironment"
@@ -2343,6 +2367,10 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
+      "x-raims-api-key-permission":
+        "code": "customers_read"
+        "resource": "customers"
+        "access": "read"
     "delete":
       "operationId": "DeleteCustomersBatch"
       "tags":
@@ -2431,6 +2459,10 @@
               "identifiers":
                 - "cus_3AbHiWSrsZBoaTg47OcMzC"
                 - "cus_1szWVIyZES2MJoAMUmjwW"
+      "x-raims-api-key-permission":
+        "code": "customers_delete"
+        "resource": "customers"
+        "access": "write"
       "parameters":
         -
           "$ref": "#/components/parameters/OAuthEnvironment"
@@ -2540,6 +2572,10 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "customers_read"
+        "resource": "customers"
+        "access": "read"
     "delete":
       "operationId": "DeleteCustomer"
       "tags":
@@ -2649,6 +2685,10 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "customers_delete"
+        "resource": "customers"
+        "access": "write"
     "patch":
       "operationId": "UpdateCustomer"
       "tags":
@@ -2818,9 +2858,17 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
+      "x-raims-api-key-permission":
+        "code": "customers_update"
+        "resource": "customers"
+        "access": "write"
   "/v1/accounts/fees":
     "get":
       "operationId": "GetAccountFees"
+      "x-raims-api-key-permission":
+        "code": "accounts_read"
+        "resource": "accounts"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -2889,6 +2937,10 @@
   "/v1/simulations/charges/{id}/confirm_payment":
     "post":
       "operationId": "ConfirmSimulationPayment"
+      "x-raims-api-key-permission":
+        "code": "simulations_confirm_payment"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -2897,7 +2949,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -3064,6 +3116,10 @@
   "/v1/simulations/charges/{id}/fail_payment":
     "post":
       "operationId": "FailSimulationPayment"
+      "x-raims-api-key-permission":
+        "code": "simulations_fail_payment"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -3072,7 +3128,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -3239,6 +3295,10 @@
   "/v1/accounts/context":
     "get":
       "operationId": "GetAccountContext"
+      "x-raims-api-key-permission":
+        "code": "accounts_read"
+        "resource": "accounts"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -3327,6 +3387,10 @@
   "/v1/accounts/account_number":
     "get":
       "operationId": "GetAccountNumber"
+      "x-raims-api-key-permission":
+        "code": "accounts_read"
+        "resource": "accounts"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -3335,7 +3399,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
       "responses":
         "200":
           "content":
@@ -3444,6 +3508,10 @@
   "/v1/withdrawals/automatic_settings":
     "get":
       "operationId": "GetAutomaticWithdrawalSettings"
+      "x-raims-api-key-permission":
+        "code": "automatic_withdrawal_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -3452,7 +3520,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
       "responses":
         "200":
           "content":
@@ -3558,6 +3626,10 @@
       "description": "Consulte a ativação, o valor mínimo, o horário diário e a próxima tentativa prevista de saque da empresa. A consulta exige uma chave de API de Produção."
     "patch":
       "operationId": "UpdateAutomaticWithdrawalSettings"
+      "x-raims-api-key-permission":
+        "code": "automatic_withdrawal_update"
+        "resource": "withdrawals"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -3566,7 +3638,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
       "requestBody":
@@ -3753,6 +3825,10 @@
   "/v1/balances/forecast":
     "get":
       "operationId": "GetBalanceForecast"
+      "x-raims-api-key-permission":
+        "code": "balances_read"
+        "resource": "balances"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -3876,6 +3952,10 @@
   "/v1/balances":
     "get":
       "operationId": "GetBalance"
+      "x-raims-api-key-permission":
+        "code": "balances_read"
+        "resource": "balances"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -3934,6 +4014,10 @@
   "/v1/charges/{id}/payment":
     "get":
       "operationId": "GetChargePayment"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -4115,6 +4199,10 @@
   "/v1/charges/{id}/receipt":
     "get":
       "operationId": "GetChargeReceipt"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -4230,6 +4318,10 @@
   "/v1/charges/{id}/boleto":
     "get":
       "operationId": "GetChargeBoleto"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -4363,6 +4455,10 @@
   "/v1/charges/{id}/refunds":
     "post":
       "operationId": "CreateRefund"
+      "x-raims-api-key-permission":
+        "code": "refunds_create"
+        "resource": "refunds"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -4662,6 +4758,10 @@
       "description": "Solicita a devolução integral ou parcial de um pagamento Pix recebido. Em Produção, o valor retorna à conta de origem e uma solicitação aceita ainda precisa de confirmação. No Sandbox, a simulação conclui na própria requisição, sem movimentar dinheiro real."
     "get":
       "operationId": "ListChargeRefunds"
+      "x-raims-api-key-permission":
+        "code": "refunds_read"
+        "resource": "refunds"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -4870,6 +4970,10 @@
   "/v1/charges/{id}/refund_eligibility":
     "get":
       "operationId": "GetRefundEligibility"
+      "x-raims-api-key-permission":
+        "code": "refunds_read"
+        "resource": "refunds"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -5079,6 +5183,10 @@
   "/v1/charges/statistics":
     "get":
       "operationId": "GetChargeStatistics"
+      "x-raims-api-key-permission":
+        "code": "charges_read"
+        "resource": "charges"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -5216,6 +5324,10 @@
   "/v1/accounts/checkout_settings/logo_uploads":
     "post":
       "operationId": "CreateCheckoutLogoUpload"
+      "x-raims-api-key-permission":
+        "code": "checkout_assets_upload"
+        "resource": "accounts"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -5340,6 +5452,10 @@
   "/v1/accounts/checkout_settings/favicon_uploads":
     "post":
       "operationId": "CreateCheckoutFaviconUpload"
+      "x-raims-api-key-permission":
+        "code": "checkout_assets_upload"
+        "resource": "accounts"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -5464,6 +5580,10 @@
   "/v1/accounts/checkout_settings/uploads/{id}":
     "delete":
       "operationId": "DeleteCheckoutAssetUpload"
+      "x-raims-api-key-permission":
+        "code": "checkout_assets_delete"
+        "resource": "accounts"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -5594,6 +5714,10 @@
   "/v1/accounts/checkout_settings":
     "get":
       "operationId": "GetCheckoutSettings"
+      "x-raims-api-key-permission":
+        "code": "checkout_read"
+        "resource": "accounts"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -5774,6 +5898,10 @@
       "description": "Consulte as imagens, as cores, o e-mail de suporte e os meios de pagamento padrão do checkout da empresa no ambiente autenticado."
     "patch":
       "operationId": "UpdateCheckoutSettings"
+      "x-raims-api-key-permission":
+        "code": "checkout_update"
+        "resource": "accounts"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -6071,6 +6199,10 @@
   "/v1/disputes/{id}":
     "get":
       "operationId": "GetDispute"
+      "x-raims-api-key-permission":
+        "code": "disputes_read"
+        "resource": "disputes"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -6259,6 +6391,10 @@
   "/v1/disputes":
     "get":
       "operationId": "ListDisputes"
+      "x-raims-api-key-permission":
+        "code": "disputes_read"
+        "resource": "disputes"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -6514,6 +6650,10 @@
   "/v1/payment_links/{id}/send_email":
     "post":
       "operationId": "SendPaymentLinkEmail"
+      "x-raims-api-key-permission":
+        "code": "payment_links_send"
+        "resource": "payment_links"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -6729,6 +6869,10 @@
   "/v1/payment_links":
     "post":
       "operationId": "CreatePaymentLink"
+      "x-raims-api-key-permission":
+        "code": "payment_links_create"
+        "resource": "payment_links"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -6993,6 +7137,10 @@
       "description": "Cria o link de uma cobrança existente ou retorna o mesmo link quando ele já existe. Informe charge_id. Um link novo começa ativo; reutilizar um link pausado preserva a pausa. Título, valor, vencimento e cliente vêm da cobrança. Esta requisição não cria outra cobrança, não emite pagamentos e não solicita e-mail."
     "get":
       "operationId": "ListPaymentLinks"
+      "x-raims-api-key-permission":
+        "code": "payment_links_read"
+        "resource": "payment_links"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -7154,6 +7302,10 @@
   "/v1/payment_links/{id}":
     "get":
       "operationId": "GetPaymentLink"
+      "x-raims-api-key-permission":
+        "code": "payment_links_read"
+        "resource": "payment_links"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -7389,6 +7541,10 @@
       "description": "Consulta a URL, a configuração e a disponibilidade atual do link. is_active informa se o link está ativo; is_payable indica se o checkout pode receber pagamento neste momento. O link precisa pertencer à empresa e ao ambiente autenticado. Para valor, vencimento, cliente e status financeiro, use GET /v1/charges/{charge_id}."
     "patch":
       "operationId": "UpdatePaymentLink"
+      "x-raims-api-key-permission":
+        "code": "payment_links_update"
+        "resource": "payment_links"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -7700,6 +7856,10 @@
   "/v1/refunds/{id}/receipt":
     "get":
       "operationId": "GetRefundReceipt"
+      "x-raims-api-key-permission":
+        "code": "refunds_read"
+        "resource": "refunds"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -7815,6 +7975,10 @@
   "/v1/refunds":
     "get":
       "operationId": "ListRefunds"
+      "x-raims-api-key-permission":
+        "code": "refunds_read"
+        "resource": "refunds"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -7987,6 +8151,10 @@
   "/v1/refunds/{id}":
     "get":
       "operationId": "GetRefund"
+      "x-raims-api-key-permission":
+        "code": "refunds_read"
+        "resource": "refunds"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -8187,6 +8355,10 @@
   "/v1/simulations/refunds/{id}/complete":
     "post":
       "operationId": "CompleteSimulationRefund"
+      "x-raims-api-key-permission":
+        "code": "simulations_complete_refund"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -8195,7 +8367,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -8356,6 +8528,10 @@
   "/v1/simulations/refunds/{id}/fail":
     "post":
       "operationId": "FailSimulationRefund"
+      "x-raims-api-key-permission":
+        "code": "simulations_fail_refund"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -8364,7 +8540,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -8527,6 +8703,10 @@
   "/v1/simulations/charges/{id}/scenario":
     "post":
       "operationId": "ConfigureSimulationScenario"
+      "x-raims-api-key-permission":
+        "code": "simulations_configure_scenario"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -8535,7 +8715,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -8723,6 +8903,10 @@
   "/v1/simulations/charges/{id}/resolve":
     "post":
       "operationId": "ResolveSimulationScenario"
+      "x-raims-api-key-permission":
+        "code": "simulations_resolve_scenario"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -8731,7 +8915,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -8919,6 +9103,10 @@
   "/v1/simulations/charges/{id}/issue_payment":
     "post":
       "operationId": "IssueSimulationPayment"
+      "x-raims-api-key-permission":
+        "code": "simulations_issue_payment"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -8927,7 +9115,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -9285,6 +9473,10 @@
   "/v1/simulations/charges/{id}/compensate_boleto":
     "post":
       "operationId": "CompensateSimulationBoleto"
+      "x-raims-api-key-permission":
+        "code": "simulations_compensate_boleto"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -9293,7 +9485,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -9451,6 +9643,10 @@
   "/v1/simulations/charges/{id}/refunds":
     "post":
       "operationId": "CreateSimulationRefund"
+      "x-raims-api-key-permission":
+        "code": "simulations_create_refund"
+        "resource": "simulations"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -9459,7 +9655,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthSandboxEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
         -
@@ -9738,6 +9934,10 @@
   "/v1/statements/{id}":
     "get":
       "operationId": "GetStatement"
+      "x-raims-api-key-permission":
+        "code": "statements_read"
+        "resource": "statements"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -9855,6 +10055,10 @@
   "/v1/statements":
     "get":
       "operationId": "ListStatements"
+      "x-raims-api-key-permission":
+        "code": "statements_read"
+        "resource": "statements"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -10039,6 +10243,10 @@
   "/v1/webhook_event_types":
     "get":
       "operationId": "ListWebhookEventTypes"
+      "x-raims-api-key-permission":
+        "code": "webhooks_read"
+        "resource": "webhooks"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -10118,6 +10326,10 @@
   "/v1/webhooks/{webhook_id}/health":
     "get":
       "operationId": "GetWebhookHealth"
+      "x-raims-api-key-permission":
+        "code": "webhooks_read"
+        "resource": "webhooks"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -10227,6 +10439,10 @@
   "/v1/webhooks/{webhook_id}/pause":
     "patch":
       "operationId": "SetWebhookPause"
+      "x-raims-api-key-permission":
+        "code": "webhooks_pause"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -10385,6 +10601,10 @@
   "/v1/webhooks":
     "get":
       "operationId": "ListWebhooks"
+      "x-raims-api-key-permission":
+        "code": "webhooks_read"
+        "resource": "webhooks"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -10495,6 +10715,10 @@
       "description": "Consulte os destinos cadastrados na empresa e no ambiente autenticado, incluindo os desativados. Para avançar, copie page.next_after para after. A listagem não retorna segredos de assinatura."
     "post":
       "operationId": "CreateWebhook"
+      "x-raims-api-key-permission":
+        "code": "webhooks_create"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -10637,6 +10861,10 @@
   "/v1/webhooks/{webhook_id}":
     "get":
       "operationId": "GetWebhook"
+      "x-raims-api-key-permission":
+        "code": "webhooks_read"
+        "resource": "webhooks"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -10738,6 +10966,10 @@
       "description": "Consulte a URL, os eventos assinados e a situação de um webhook. O segredo de assinatura não é retornado nesta consulta."
     "patch":
       "operationId": "UpdateWebhook"
+      "x-raims-api-key-permission":
+        "code": "webhooks_update"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -10891,6 +11123,10 @@
       "description": "Altere o nome, a URL, a seleção de eventos ou a ativação de um webhook. Envie apenas os campos que deseja mudar; omitir um campo preserva seu valor. A seleção de eventos enviada substitui a anterior. Os campos não aceitam null nem valores vazios."
     "delete":
       "operationId": "DeleteWebhook"
+      "x-raims-api-key-permission":
+        "code": "webhooks_delete"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -10985,6 +11221,10 @@
   "/v1/webhooks/{webhook_id}/rotate_secret":
     "post":
       "operationId": "RotateWebhookSecret"
+      "x-raims-api-key-permission":
+        "code": "webhooks_rotate_secret"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -11100,6 +11340,10 @@
   "/v1/webhooks/{webhook_id}/test":
     "post":
       "operationId": "TestWebhook"
+      "x-raims-api-key-permission":
+        "code": "webhooks_test"
+        "resource": "webhooks"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -11225,6 +11469,10 @@
   "/v1/withdrawal_destinations/{id}":
     "get":
       "operationId": "GetWithdrawalDestination"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -11233,7 +11481,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
         -
           "name": "id"
           "in": "path"
@@ -11346,6 +11594,10 @@
   "/v1/withdrawal_destinations":
     "get":
       "operationId": "ListWithdrawalDestinations"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -11354,7 +11606,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
         -
           "name": "page_size"
           "in": "query"
@@ -11498,6 +11750,10 @@
   "/v1/withdrawals/limits":
     "get":
       "operationId": "GetWithdrawalLimits"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -11570,6 +11826,10 @@
   "/v1/withdrawals":
     "post":
       "operationId": "CreateWithdrawal"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_create"
+        "resource": "withdrawals"
+        "access": "write"
       "security":
         -
           "BearerAuth": []
@@ -11578,7 +11838,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
         -
           "$ref": "#/components/parameters/IdempotencyKey"
       "requestBody":
@@ -11881,6 +12141,10 @@
       "description": "Solicite um saque Pix para a chave padrão da própria empresa cadastrada no Dashboard. O valor solicitado inclui a tarifa. Para exigir o destino padrão que você conferiu, informe expected_destination_id. Guarde o identificador e acompanhe o mesmo saque enquanto o resultado estiver pendente."
     "get":
       "operationId": "ListWithdrawals"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -12096,6 +12360,10 @@
   "/v1/withdrawals/{id}":
     "get":
       "operationId": "GetWithdrawal"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -12244,6 +12512,10 @@
   "/v1/withdrawals/summary":
     "get":
       "operationId": "GetWithdrawalSummary"
+      "x-raims-api-key-permission":
+        "code": "withdrawals_read"
+        "resource": "withdrawals"
+        "access": "read"
       "security":
         -
           "BearerAuth": []
@@ -12252,7 +12524,7 @@
             - "raims:api"
       "parameters":
         -
-          "$ref": "#/components/parameters/OAuthEnvironment"
+          "$ref": "#/components/parameters/OAuthProductionEnvironment"
       "responses":
         "200":
           "content":
@@ -12340,13 +12612,15 @@
       "name": "X-Raims-Environment"
       "in": "header"
       "required": false
+      "x-raims-security-schemes":
+        - "ApplicationOAuth"
       "schema":
         "type": "string"
         "enum":
           - "Sandbox"
           - "Production"
         "example": "Sandbox"
-      "description": "Ambiente da requisição. Obrigatório ao usar um token OAuth: Sandbox para testes ou Production para dados reais. Com uma chave de API, você pode omitir o header; se o informar, ele deve corresponder ao ambiente da chave."
+      "description": "Ambiente da requisição OAuth. Informe Sandbox para testes ou Production para dados reais, conforme o acesso autorizado. Com chave de API, o ambiente é definido pela própria chave; não envie este header."
     "IdempotencyKey":
       "name": "Idempotency-Key"
       "in": "header"
@@ -12358,6 +12632,30 @@
         "pattern": "^[!-~]{1,255}$"
         "example": "b2816b4f-7c18-4bc4-a1d4-fc01cde750d0"
       "description": "Chave única escolhida pelo seu sistema para identificar esta requisição. Ao repetir a tentativa, envie a mesma chave e os mesmos parâmetros. Sem este header, a requisição é processada normalmente. Consulte o guia de idempotência para os prazos e o tratamento de respostas pendentes ou incertas."
+    "OAuthSandboxEnvironment":
+      "name": "X-Raims-Environment"
+      "in": "header"
+      "required": false
+      "x-raims-security-schemes":
+        - "ApplicationOAuth"
+      "schema":
+        "type": "string"
+        "enum":
+          - "Sandbox"
+        "example": "Sandbox"
+      "description": "Ambiente da requisição OAuth. Esta operação aceita somente Sandbox. Com chave de API, use uma chave Sandbox e não envie este header."
+    "OAuthProductionEnvironment":
+      "name": "X-Raims-Environment"
+      "in": "header"
+      "required": false
+      "x-raims-security-schemes":
+        - "ApplicationOAuth"
+      "schema":
+        "type": "string"
+        "enum":
+          - "Production"
+        "example": "Production"
+      "description": "Ambiente da requisição OAuth. Esta operação aceita somente Production. Com chave de API, use uma chave de Produção e não envie este header."
   "headers":
     "RequestId":
       "required": true
@@ -16507,12 +16805,18 @@
         "X-Request-Id":
           "$ref": "#/components/headers/LegacyRequestId"
     "Forbidden":
-      "description": "O acesso foi recusado pela situação da empresa, por uma restrição de IP ou pelo uso de uma chave de Produção no console. Confira error.code e a orientação de error.message. Para empresa suspensa ou encerrada, contate sac@raims.com. Para cadastro pendente, consulte a situação no Dashboard. Revise os IPs permitidos pela chave; o console exige uma chave de Sandbox."
+      "description": "O acesso foi recusado pela situação da empresa, pelas permissões ou restrições de IP da chave, ou pelo uso de uma chave de Produção no console. Confira error.code e a orientação de error.message. Para empresa suspensa ou encerrada, contate sac@raims.com. Para cadastro pendente, consulte a situação no Dashboard. Revise as permissões e os IPs permitidos pela chave; o console exige uma chave de Sandbox."
       "content":
         "application/json":
           "schema":
             "$ref": "#/components/schemas/ErrorResponse"
           "examples":
+            "api_key_permission_denied":
+              "summary": "Permissão ausente na chave"
+              "value":
+                "error":
+                  "code": "API_KEY_PERMISSION_DENIED"
+                  "message": "The API key does not allow this request. Review the key's permissions in the Dashboard."
             "ip_restricted":
               "summary": "IP não autorizado pela chave"
               "value":
@@ -16561,12 +16865,6 @@
                 "error":
                   "code": "OAUTH_ENVIRONMENT_FORBIDDEN"
                   "message": "The OAuth connection does not allow the selected environment. Select an authorized environment."
-            "credential_environment":
-              "summary": "Ambiente diferente do permitido pela chave"
-              "value":
-                "error":
-                  "code": "CREDENTIAL_ENVIRONMENT_MISMATCH"
-                  "message": "The selected environment does not match the API key. Select its environment or use another credential."
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
@@ -16795,7 +17093,7 @@
               "value":
                 "error":
                   "code": "OAUTH_ENVIRONMENT_REQUIRED"
-                  "message": "Select Sandbox or Production with the X-Raims-Environment header when using OAuth."
+                  "message": "Set X-Raims-Environment to an environment accepted by this operation when using OAuth."
                   "details":
                     -
                       "field": "X-Raims-Environment"
@@ -16806,7 +17104,7 @@
               "value":
                 "error":
                   "code": "OAUTH_ENVIRONMENT_INVALID"
-                  "message": "The X-Raims-Environment header must contain exactly one value: Sandbox or Production."
+                  "message": "The X-Raims-Environment header must contain exactly one supported value. Check the environments accepted by this operation."
                   "details":
                     -
                       "field": "X-Raims-Environment"
@@ -16817,7 +17115,7 @@
           "$ref": "#/components/headers/RequestId"
         "X-Request-Id":
           "$ref": "#/components/headers/LegacyRequestId"
-      "description": "Informe X-Raims-Environment com Sandbox ou Production ao usar OAuth. Com chave de API, um valor informado precisa ser válido e corresponder ao ambiente da chave."
+      "description": "Ao usar OAuth, informe X-Raims-Environment com um dos valores aceitos pela operação. Com chave de API, o ambiente vem da própria chave."
     "BadGateway":
       "description": "O pedido foi recusado durante o processamento e não há devolução confirmada. Consulte o histórico da cobrança antes de tentar novamente."
       "content":
