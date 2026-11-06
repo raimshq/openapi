@@ -3053,13 +3053,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -3232,13 +3232,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -3470,13 +3470,13 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "O Sandbox não possui agência e número de conta financeira. Use uma chave de Produção no servidor da integração para consultar esses dados."
+          "description": "O Sandbox não possui agência e número de conta financeira. Use chave de API ou autorização OAuth de Produção no servidor da integração para consultar esses dados."
         "404":
           "content":
             "application/json":
@@ -3504,7 +3504,7 @@
       "tags":
         - "Informações e personalização da conta"
       "summary": "Recuperar número de conta"
-      "description": "Consulte a agência e o número da conta financeira da sua empresa na Raims. A consulta exige uma chave de Produção e uma conta aprovada e habilitada."
+      "description": "Consulte a agência e o número da conta financeira da sua empresa na Raims. A consulta exige acesso autorizado em Produção e uma conta aprovada e habilitada."
   "/v1/withdrawals/automatic_settings":
     "get":
       "operationId": "GetAutomaticWithdrawalSettings"
@@ -3589,13 +3589,13 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A requisição exige uma chave de Produção e uma situação da empresa que permita o acesso."
+          "description": "A requisição exige acesso autorizado em Produção e uma situação da empresa que permita o acesso."
         "404":
           "content":
             "application/json":
@@ -3623,7 +3623,7 @@
       "tags":
         - "Saques"
       "summary": "Consultar saque automático"
-      "description": "Consulte a ativação, o valor mínimo, o horário diário e a próxima tentativa prevista de saque da empresa. A consulta exige uma chave de API de Produção."
+      "description": "Consulte a ativação, o valor mínimo, o horário diário e a próxima tentativa prevista de saque da empresa. A consulta exige acesso autorizado em Produção."
     "patch":
       "operationId": "UpdateAutomaticWithdrawalSettings"
       "x-raims-api-key-permission":
@@ -3747,7 +3747,7 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
                 "account_not_approved":
                   "summary": "Conta sem aprovação para saques"
                   "value":
@@ -3759,7 +3759,7 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A atualização exige uma chave de Produção e uma situação da empresa que permita alterações. Ativar ou alterar uma configuração ativa também exige uma conta financeira aprovada para saques. Confira os avisos da conta no Dashboard."
+          "description": "A atualização exige acesso autorizado em Produção e uma situação da empresa que permita alterações. Ativar ou alterar uma configuração ativa também exige uma conta financeira aprovada para saques. Confira os avisos da conta no Dashboard."
         "404":
           "content":
             "application/json":
@@ -3821,7 +3821,7 @@
       "tags":
         - "Saques"
       "summary": "Atualizar saque automático"
-      "description": "Ative, desative ou ajuste a tentativa diária de saque para o destino próprio selecionado. Use uma chave de API de Produção. Campos omitidos preservam o valor atual; salvar não solicita um saque imediato."
+      "description": "Ative, desative ou ajuste a tentativa diária de saque para o destino próprio selecionado. Use chave de API ou autorização OAuth de Produção. Campos omitidos preservam o valor atual; salvar não solicita um saque imediato."
   "/v1/balances/forecast":
     "get":
       "operationId": "GetBalanceForecast"
@@ -6763,7 +6763,7 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A chave ou a empresa não pode solicitar o envio. Para empresa com cadastro pendente, o destinatário precisa ser o e-mail do titular."
+          "description": "A autenticação ou a situação da empresa não permite o envio. Para empresa com cadastro pendente, o destinatário precisa ser o e-mail principal da conta."
         "404":
           "content":
             "application/json":
@@ -8470,13 +8470,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a refund created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a refund created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "Esta requisição aceita somente chave de API de Sandbox."
+          "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -8645,13 +8645,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a refund created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a refund created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "Esta requisição aceita somente chave de API de Sandbox."
+          "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -8847,13 +8847,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -9047,13 +9047,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -9408,13 +9408,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -9589,13 +9589,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a charge created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A simulação exige uma chave de API de Sandbox. Uma chave de Produção não pode executar esta requisição."
+          "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -9822,13 +9822,13 @@
               "example":
                 "error":
                   "code": "SANDBOX_ENVIRONMENT_REQUIRED"
-                  "message": "This endpoint is available only in Sandbox. Use a Sandbox API key and a refund created in the same environment."
+                  "message": "This endpoint is available only in Sandbox. Use an API key or OAuth authorization for Sandbox and a charge created in that environment."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "Esta requisição aceita somente chave de API de Sandbox."
+          "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
             "application/json":
@@ -11336,7 +11336,7 @@
       "tags":
         - "Webhooks"
       "summary": "Rotacionar o segredo de assinatura"
-      "description": "Substitua o segredo usado para assinar os eventos, preservando o identificador e a configuração do webhook. Guarde o secret_key retornado e atualize o receptor durante o período de transição. Repetir uma rotação com período positivo enquanto a transição está ativa retorna o mesmo segredo e o mesmo vencimento. Para revogar os segredos anteriores, envie grace_period_seconds igual a zero: uma nova assinatura será gerada, inclusive durante uma transição ativa. Requisições já autorizadas ou em andamento podem chegar com a assinatura anterior."
+      "description": "Substitua o segredo usado para assinar os eventos, preservando o identificador e a configuração do webhook. Guarde o secret_key retornado e atualize o receptor durante o período de transição. Repetir uma rotação com período positivo enquanto a transição está ativa retorna o mesmo segredo e o mesmo vencimento. Para revogar os segredos anteriores, envie grace_period_seconds igual a zero: um novo segredo será gerado, inclusive durante uma transição ativa. Requisições já autorizadas ou em andamento podem chegar com a assinatura anterior."
   "/v1/webhooks/{webhook_id}/test":
     "post":
       "operationId": "TestWebhook"
@@ -11556,13 +11556,13 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "Destinos de saque exigem Produção. Use uma chave de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
+          "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
         "404":
           "content":
             "application/json":
@@ -11590,7 +11590,7 @@
       "tags":
         - "Saques"
       "summary": "Recuperar um destino de saque"
-      "description": "Consulte um destino Pix próprio pelo identificador recebido na listagem. A resposta apresenta a chave mascarada e informa se ela é o padrão atual. Use uma chave de Produção."
+      "description": "Consulte um destino Pix próprio pelo identificador recebido na listagem. A resposta apresenta a chave mascarada e informa se ela é o padrão atual. Use chave de API ou autorização OAuth de Produção."
   "/v1/withdrawal_destinations":
     "get":
       "operationId": "ListWithdrawalDestinations"
@@ -11730,13 +11730,13 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "Destinos de saque exigem Produção. Use uma chave de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
+          "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
         "429":
           "$ref": "#/components/responses/RateLimited"
         "500":
@@ -11746,7 +11746,7 @@
       "tags":
         - "Saques"
       "summary": "Listar destinos de saque"
-      "description": "Consulte os destinos Pix próprios verificados e identifique o padrão antes de solicitar um saque. A consulta exige uma chave de Produção."
+      "description": "Consulte os destinos Pix próprios verificados e identifique o padrão antes de solicitar um saque. A consulta exige acesso autorizado em Produção."
   "/v1/withdrawals/limits":
     "get":
       "operationId": "GetWithdrawalLimits"
@@ -12028,7 +12028,7 @@
                   "value":
                     "error":
                       "code": "PIX_WITHDRAWAL_PRODUCTION_ONLY"
-                      "message": "Withdrawal requests are available only in Production. Use a Production API key."
+                      "message": "Withdrawal requests are available only in Production. Use an API key or OAuth authorization for Production."
                 "account_not_approved":
                   "summary": "Conta sem aprovação para saques"
                   "value":
@@ -12052,7 +12052,7 @@
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A chave ou a conta não permite esta solicitação. Saques exigem uma chave de Produção e uma conta autorizada a retirar valores. Confira os avisos da conta no Dashboard."
+          "description": "A autenticação ou a situação da conta não permite esta solicitação. Saques exigem acesso autorizado em Produção e uma conta autorizada a retirar valores. Confira os avisos da conta no Dashboard."
         "409":
           "content":
             "application/json":
@@ -12589,13 +12589,13 @@
                   "value":
                     "error":
                       "code": "DATA_ENVIRONMENT_NOT_SUPPORTED"
-                      "message": "This endpoint is available only in Production. Use a Production API key outside the documentation console."
+                      "message": "This endpoint is available only in Production. Use an API key or OAuth authorization for Production outside the documentation console."
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
             "X-Request-Id":
               "$ref": "#/components/headers/LegacyRequestId"
-          "description": "A consulta exige uma chave de API de Produção. O Sandbox não oferece este resumo de saques."
+          "description": "A consulta exige acesso autorizado em Produção. O Sandbox não oferece este resumo de saques."
         "429":
           "$ref": "#/components/responses/RateLimited"
         "500":
@@ -12605,7 +12605,7 @@
       "tags":
         - "Informações financeiras"
       "summary": "Consultar saques em processamento"
-      "description": "Consulte a quantidade e o valor total dos saques pendentes ou em processamento da empresa. A consulta exige uma chave de API de Produção e não altera o andamento dos pedidos."
+      "description": "Consulte a quantidade e o valor total dos saques pendentes ou em processamento da empresa. A consulta exige acesso autorizado em Produção e não altera o andamento dos pedidos."
 "components":
   "parameters":
     "OAuthEnvironment":
@@ -15555,7 +15555,7 @@
           "minimum": 0
           "maximum": 86400
           "default": 86400
-          "description": "Período em que o segredo anterior pode continuar assinando envios. Zero gera uma nova assinatura e encerra a validade dos segredos anteriores, inclusive durante uma transição ativa. Requisições já autorizadas ou em andamento podem chegar com a assinatura anterior."
+          "description": "Período em que o segredo anterior pode continuar assinando envios. Zero gera um novo segredo e encerra a validade dos segredos anteriores, inclusive durante uma transição ativa. Requisições já autorizadas ou em andamento podem chegar com a assinatura anterior."
           "example": 86400
       "description": "Prazo de transição entre os segredos de assinatura."
     "WebhookSecretRotation":
