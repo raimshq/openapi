@@ -45,8 +45,6 @@
                 "const": "no-store"
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "content":
             "application/json":
               "schema":
@@ -404,8 +402,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -423,8 +419,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "429":
           "$ref": "#/components/responses/RateLimited"
         "500":
@@ -484,8 +478,6 @@
                 "const": "no-store"
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -561,8 +553,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -580,8 +570,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "409":
           "description": "O estado da cobrança impede a alteração de título, descrição ou referência externa, ou outra requisição está em andamento. Uma requisição que altera somente metadata pode atualizar uma cobrança finalizada. Se os campos forem enviados juntos e houver impedimento, nenhuma alteração é aplicada. Consulte a cobrança antes de tentar novamente."
           "content":
@@ -610,8 +598,6 @@
               "example": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
         "415":
@@ -666,8 +652,6 @@
                 "const": "no-store"
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -691,8 +675,6 @@
                 "const": "no-store"
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -738,8 +720,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -757,8 +737,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "409":
           "description": "O estado da cobrança ou uma condição do pagamento impede a revogação. A mensagem identifica a causa e orienta como continuar. Na recusa por estado, informa o estado atual e os aceitos. Se já pediu o cancelamento, consulte a cobrança antes de tentar novamente."
           "content":
@@ -817,8 +795,6 @@
               "example": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
         "422":
@@ -859,8 +835,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
       "x-raims-api-key-permission":
         "code": "charges_revoke"
         "resource": "charges"
@@ -1096,8 +1070,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "400":
           "description": "Parâmetros de consulta inválidos. Confira em error.details o campo, o código e a mensagem que explica a correção. Envie after ou before; preencher os dois retorna MUTUALLY_EXCLUSIVE."
           "content":
@@ -1255,8 +1227,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -1291,8 +1261,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
       "x-raims-api-key-permission":
         "code": "charges_read"
         "resource": "charges"
@@ -1341,8 +1309,6 @@
               "description": "Os dados da cobrança e as instruções de pagamento não devem ser armazenados em cache."
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -1671,8 +1637,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -1856,8 +1820,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -1873,8 +1835,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "404":
           "description": "Nenhum cliente foi encontrado para customer_id na empresa e no ambiente autenticado. Confira o ID e a autenticação usados na requisição. A cobrança não foi criada."
           "content":
@@ -1893,8 +1853,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "409":
           "$ref": "#/components/responses/RequestInProgress"
         "413":
@@ -1939,8 +1897,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
       "x-raims-api-key-permission":
         "code": "charges_create"
         "resource": "charges"
@@ -2001,8 +1957,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -2024,8 +1978,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -2090,8 +2042,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2258,8 +2208,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "400":
           "description": "Parâmetros de consulta inválidos. Confira os campos e motivos em error.details. After e before preenchidos juntos retornam MUTUALLY_EXCLUSIVE. Se receber INVALID_CURSOR, reinicie a listagem sem cursor, mantendo os filtros desejados."
           "content":
@@ -2329,8 +2277,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2365,8 +2311,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
       "x-raims-api-key-permission":
         "code": "customers_read"
         "resource": "customers"
@@ -2404,8 +2348,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -2428,8 +2370,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2525,8 +2465,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "400":
           "description": "Identificador de cliente inválido. Confira o campo id e a explicação em error.details."
           "content":
@@ -2545,8 +2483,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2564,8 +2500,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "429":
           "$ref": "#/components/responses/RateLimited"
         "500":
@@ -2614,8 +2548,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "400":
           "description": "Identificador de cliente inválido. Confira o campo id e a explicação em error.details."
           "content":
@@ -2634,8 +2566,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2653,8 +2583,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "409":
           "description": "O cliente tem cobranças não removidas ou outra requisição está em andamento. Consulte error.code para identificar o motivo."
           "content":
@@ -2677,8 +2605,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "429":
           "$ref": "#/components/responses/RateLimited"
         "500":
@@ -2757,8 +2683,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -2823,8 +2747,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "401":
           "$ref": "#/components/responses/Unauthorized"
         "403":
@@ -2842,8 +2764,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
         "409":
           "$ref": "#/components/responses/RequestInProgress"
         "413":
@@ -2910,8 +2830,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -2986,8 +2904,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3040,8 +2956,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3057,8 +2971,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -3072,8 +2984,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -3096,8 +3006,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O estado atual da cobrança ou de seu pagamento impede a simulação. Confira a cobrança e crie outra cobrança de teste para um resultado diferente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -3165,8 +3073,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3219,8 +3125,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3236,8 +3140,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -3251,8 +3153,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -3275,8 +3175,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O estado atual da cobrança ou de seu pagamento impede a simulação. Confira a cobrança e crie outra cobrança de teste para um resultado diferente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -3328,8 +3226,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3367,8 +3263,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A requisição contém corpo ou parâmetros de consulta. Remova esses dados e envie somente a autenticação."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3415,8 +3309,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3454,8 +3346,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A requisição contém corpo ou parâmetros de consulta. Remova esses dados e envie somente a autenticação."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3474,8 +3364,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O Sandbox não possui agência e número de conta financeira. Use chave de API ou autorização OAuth de Produção no servidor da integração para consultar esses dados."
         "404":
           "content":
@@ -3492,8 +3380,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A conta financeira não está aprovada e habilitada, ou a agência e o número da conta não estão disponíveis. Confira a situação da conta no Dashboard."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -3545,8 +3431,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3573,8 +3457,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3593,8 +3475,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A requisição exige acesso autorizado em Produção e uma situação da empresa que permita o acesso."
         "404":
           "content":
@@ -3611,8 +3491,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A configuração de saque não foi encontrada para a empresa. Confira as configurações de saques no Dashboard antes de repetir a requisição."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -3688,8 +3566,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3731,8 +3607,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo inválido ou não foi possível identificar a origem da requisição. Confira error.code e, nas validações, corrija os campos indicados em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3757,8 +3631,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A atualização exige acesso autorizado em Produção e uma situação da empresa que permita alterações. Ativar ou alterar uma configuração ativa também exige uma conta financeira aprovada para saques. Confira os avisos da conta no Dashboard."
         "404":
           "content":
@@ -3775,8 +3647,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A configuração de saque não foi encontrada para a empresa. Confira as configurações de saques no Dashboard antes de repetir a requisição."
         "409":
           "content":
@@ -3803,8 +3673,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Não foi possível alterar a configuração nas condições atuais. Um destino próprio verificado é necessário para ativar. Se houver uma execução em andamento, consulte a configuração e tente a alteração novamente depois."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -3882,8 +3750,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -3932,8 +3798,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O período ou os parâmetros da consulta não são aceitos. Escolha um período disponível e envie-o somente uma vez."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -3987,8 +3851,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4115,8 +3977,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4143,8 +4003,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -4165,8 +4023,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -4183,8 +4039,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O pagamento não atende às condições para consulta dos dados ou emissão do recibo. Consulte a cobrança antes de tentar novamente."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -4234,8 +4088,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4262,8 +4114,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -4284,8 +4134,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -4302,8 +4150,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O pagamento não atende às condições de emissão do recibo. Consulte a cobrança antes de tentar novamente."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -4353,8 +4199,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4381,8 +4225,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -4403,8 +4245,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -4439,8 +4279,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O boleto não está disponível para download. A cobrança precisa usar boleto, com os dados de emissão disponíveis e em estado que permita obter o documento. Consulte a cobrança para conferir o meio, a emissão e o andamento do boleto antes de tentar novamente."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -4532,8 +4370,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4569,8 +4405,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4633,8 +4467,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo ou parâmetro inválido, ou a origem da requisição não pôde ser identificada. Confira error.code e error.message. Quando error.details estiver presente, corrija os campos indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -4652,8 +4484,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -4730,8 +4560,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Retry-After":
               "schema":
                 "type": "integer"
@@ -4879,8 +4707,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -4933,8 +4759,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -4952,8 +4776,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -5118,8 +4940,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5146,8 +4966,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5165,8 +4983,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -5254,8 +5070,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5304,8 +5118,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O período não foi aceito ou a URL contém um parâmetro inválido. Confira error.details para identificar o campo e o motivo."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5374,8 +5186,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5406,8 +5216,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Os dados da imagem não atendem aos formatos, tamanhos ou dimensões aceitos. Corrija os campos indicados nos detalhes."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5428,8 +5236,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A conta não foi encontrada para a chave informada. Confira a credencial antes de repetir a requisição."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -5502,8 +5308,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5534,8 +5338,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Os dados da imagem não atendem aos formatos, tamanhos ou dimensões aceitos. Corrija os campos indicados nos detalhes."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5556,8 +5358,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A conta não foi encontrada para a chave informada. Confira a credencial antes de repetir a requisição."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -5620,8 +5420,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5652,8 +5450,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador é inválido, ou a requisição contém corpo ou parâmetros de consulta. Corrija os dados indicados nos detalhes."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5674,8 +5470,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O envio de imagem não foi encontrado para a empresa e o ambiente da chave. Confira o identificador recebido na preparação."
         "409":
           "content":
@@ -5696,8 +5490,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O envio já foi associado ao checkout e não pode ser descartado por este endpoint. Use a atualização da personalização para remover a imagem, quando necessário."
         "422":
           "$ref": "#/components/responses/UnprocessableEntity"
@@ -5822,8 +5614,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -5861,8 +5651,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -5883,8 +5671,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A configuração da conta não foi encontrada para a consulta. Confira o acesso à empresa antes de repetir a requisição."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -6002,8 +5788,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6040,8 +5824,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6104,8 +5886,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O corpo contém um campo desconhecido, um e-mail inválido, uma cor fora do formato ou um identificador de envio inválido. Corrija os campos indicados nos detalhes."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -6137,8 +5917,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A configuração ou um envio de imagem não foi encontrado para a empresa e o ambiente da chave. Use um identificador do tipo correto, recebido ao preparar o envio."
         "409":
           "content":
@@ -6177,8 +5955,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O envio ainda não pode ser aplicado, expirou ou já foi substituído. Confira error.code antes de corrigir o envio; um novo arquivo exige uma nova autorização."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -6328,8 +6104,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6356,8 +6130,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da contestação é inválido. Use o id completo retornado pela listagem."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -6375,8 +6147,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Contestação não encontrada na empresa e no ambiente autenticado. A resposta também é usada quando o caso não está disponível para a autenticação utilizada."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -6554,8 +6324,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6630,8 +6398,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um filtro ou cursor é inválido. Corrija os campos indicados em error.details antes de repetir. After e before preenchidos juntos não são aceitos."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -6693,8 +6459,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6741,8 +6505,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Identificador inválido, corpo não permitido ou e-mail do destinatário inválido. Para falhas na requisição, confira os detalhes; para e-mail inválido, confira o endereço associado à cobrança."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -6761,8 +6523,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A autenticação ou a situação da empresa não permite o envio. Para empresa com cadastro pendente, o destinatário precisa ser o e-mail principal da conta."
         "404":
           "content":
@@ -6776,8 +6536,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Link não encontrado na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -6810,8 +6568,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou a pausa do link. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -6854,8 +6610,6 @@
               "example": "resource-specific"
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O limite da API ou o intervalo entre reenvios foi atingido. Aguarde Retry-After e confira Raims-Rate-Limited-Reason. O motivo resource-specific indica o intervalo próprio do reenvio de e-mail."
         "500":
           "$ref": "#/components/responses/InternalError"
@@ -6926,8 +6680,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -6961,8 +6713,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -7058,8 +6808,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo do pedido é inválido. Confira em error.details o nome público do campo, o código e a correção indicada."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -7082,8 +6830,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -7116,8 +6862,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou outra requisição em andamento. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -7216,8 +6960,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -7280,8 +7022,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um filtro ou cursor é inválido. Corrija os campos indicados em error.details. Para reiniciar a listagem, remova after e before."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -7478,8 +7218,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -7505,8 +7243,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador do link ou um parâmetro da requisição é inválido. Confira error.details e use o id retornado na criação ou na listagem."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -7524,8 +7260,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Link não encontrado na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -7668,8 +7402,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -7781,8 +7513,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador ou um campo de configuração é inválido. Confira error.details. Não envie uma URL preenchida junto do seu comando de limpeza com true."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -7800,8 +7530,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Link não encontrado na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -7834,8 +7562,6 @@
                 "minimum": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou outra requisição em andamento. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -7891,8 +7617,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -7919,8 +7643,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador do estorno é inválido. Use o ID retornado pela API."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -7941,8 +7663,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Estorno ou dados da cobrança original não encontrados na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -7959,8 +7679,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O estorno não está concluído ou não tem data de conclusão confirmada. Consulte o estorno antes de tentar baixar o comprovante novamente."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -8086,8 +7804,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -8129,8 +7845,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um parâmetro de consulta inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -8290,8 +8004,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -8318,8 +8030,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -8337,8 +8047,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Estorno não encontrado na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -8399,8 +8107,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -8457,8 +8163,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador do estorno ou a requisição não é válido. Esta requisição não recebe corpo nem parâmetros de consulta. Confira os campos em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -8474,8 +8178,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -8489,8 +8191,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O estorno não foi encontrado no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -8504,8 +8204,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Retry-After":
               "schema":
                 "type": "integer"
@@ -8574,8 +8272,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -8632,8 +8328,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador do estorno ou a requisição não é válido. Esta requisição não recebe corpo nem parâmetros de consulta. Confira os campos em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -8649,8 +8343,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -8664,8 +8356,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O estorno não foi encontrado no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -8679,8 +8369,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Retry-After":
               "schema":
                 "type": "integer"
@@ -8780,8 +8468,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -8834,8 +8520,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador, a ação, o resultado ou a requisição não é válido. Confira os campos indicados em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -8851,8 +8535,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -8866,8 +8548,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -8881,8 +8561,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança ou o cenário não permite essa etapa. Prepare o cenário antes da ação; para cancellation, a cobrança deve estar aberta e ter Pix ou boleto já emitido. Use outra cobrança para testar um cenário diferente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -8980,8 +8658,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9034,8 +8710,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador, a ação, o resultado ou a requisição não é válido. Confira os campos indicados em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -9051,8 +8725,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -9066,8 +8738,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -9081,8 +8751,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança ou o cenário não permite essa etapa. Prepare o cenário antes da ação; resolva somente uma pendência já aplicada. Use outra cobrança para testar um cenário diferente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -9269,8 +8937,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9349,8 +9015,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9395,8 +9059,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador ou o meio de pagamento não é válido ou não está habilitado. Confira os campos indicados em error.details."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -9412,8 +9074,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -9427,8 +9087,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -9451,8 +9109,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não permite essa emissão. Confira seu estado, o vencimento, o meio de pagamento e os dados do cliente antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -9522,8 +9178,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9576,8 +9230,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -9593,8 +9245,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -9608,8 +9258,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
         "409":
           "content":
@@ -9623,8 +9271,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A cobrança não permite a compensação simulada. Use uma cobrança aberta com boleto já emitido e confira se há emissão ou cancelamento pendente antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -9708,8 +9354,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9745,8 +9389,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -9809,8 +9451,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo ou parâmetro inválido, ou a origem da requisição não pôde ser identificada. Confira error.code e error.message. Quando error.details estiver presente, corrija os campos indicados antes de tentar novamente."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -9826,8 +9466,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
         "404":
           "content":
@@ -9841,8 +9479,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -9907,8 +9543,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Retry-After":
               "schema":
                 "type": "integer"
@@ -9989,8 +9623,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10017,8 +9649,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Identificador de lançamento inválido."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10039,8 +9669,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Lançamento não encontrado na empresa e no ambiente autenticado."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -10195,8 +9823,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10223,8 +9849,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um filtro ou cursor inválido. Confira error.details antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10281,8 +9905,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10306,8 +9928,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10379,8 +9999,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10404,8 +10022,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador ou outro parâmetro recebido é inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10423,8 +10039,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O webhook não foi encontrado na empresa e no ambiente autenticado."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -10495,8 +10109,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10527,8 +10139,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador, o corpo ou um campo da requisição é inválido."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10549,8 +10159,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Webhook não encontrado na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -10579,8 +10187,6 @@
               "example": 1
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O webhook está inativo ou outra requisição está em andamento. Ative o webhook antes de alterar a pausa. Se houver requisição em andamento, aguarde o prazo de Retry-After."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -10671,8 +10277,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10696,8 +10300,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10767,8 +10369,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10800,8 +10400,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10839,8 +10437,6 @@
               "description": "Tempo mínimo em segundos antes de repetir uma requisição que encontrou outra em andamento."
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O cadastro encontrou um limite ou uma configuração já existente. Confira a condição informada antes de repetir a requisição."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -10907,8 +10503,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -10932,8 +10526,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -10951,8 +10543,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -11025,8 +10615,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11054,8 +10642,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11073,8 +10659,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -11102,8 +10686,6 @@
               "description": "Tempo mínimo em segundos antes de repetir uma requisição que encontrou outra em andamento."
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A atualização conflitou com outra requisição em andamento ou com uma URL já cadastrada. Confira o código do erro antes de tentar novamente."
         "413":
           "$ref": "#/components/responses/RequestTooLarge"
@@ -11153,8 +10735,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11182,8 +10762,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11201,8 +10779,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -11268,8 +10844,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11297,8 +10871,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11316,8 +10888,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
         "409":
           "$ref": "#/components/responses/RequestInProgress"
@@ -11377,8 +10947,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11410,8 +10978,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11429,8 +10995,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
         "409":
           "content":
@@ -11453,8 +11017,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O webhook precisa estar ativo e o teste deve ser aceito dentro do prazo. Confira a condição informada antes de repetir a requisição."
         "422":
           "$ref": "#/components/responses/UnprocessableEntity"
@@ -11512,8 +11074,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11540,8 +11100,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O identificador informado não corresponde ao formato de um destino de saque. Copie o ID retornado pela listagem."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11560,8 +11118,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
         "404":
           "content":
@@ -11578,8 +11134,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O destino não foi encontrado entre os destinos disponíveis da empresa. Consulte novamente a listagem para conferir os destinos atuais."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -11671,8 +11225,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11714,8 +11266,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A consulta contém parâmetros inválidos. Confira os detalhes do campo e use os cursores retornados por esta listagem."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -11734,8 +11284,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -11799,8 +11347,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11901,8 +11447,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -11964,8 +11508,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -12012,8 +11554,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um campo inválido ou não foi possível identificar a origem da requisição. Confira error.code e, nas validações, error.details antes de corrigir o envio."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -12050,8 +11590,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A autenticação ou a situação da conta não permite esta solicitação. Saques exigem acesso autorizado em Produção e uma conta autorizada a retirar valores. Confira os avisos da conta no Dashboard."
         "409":
           "content":
@@ -12116,8 +11654,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Location":
               "schema":
                 "type": "string"
@@ -12312,8 +11848,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -12340,8 +11874,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um parâmetro inválido. Confira error.details para identificar o campo e o formato aceito."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -12446,8 +11978,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -12474,8 +12004,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Há um parâmetro inválido. Confira error.details para identificar o campo e o formato aceito."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -12496,8 +12024,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "O saque não foi encontrado na empresa e no ambiente autenticado."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -12545,8 +12071,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
             "Cache-Control":
               "schema":
                 "type": "string"
@@ -12573,8 +12097,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
         "401":
           "$ref": "#/components/responses/Unauthorized"
@@ -12593,8 +12115,6 @@
           "headers":
             "Request-Id":
               "$ref": "#/components/headers/RequestId"
-            "X-Request-Id":
-              "$ref": "#/components/headers/LegacyRequestId"
           "description": "A consulta exige acesso autorizado em Produção. O Sandbox não oferece este resumo de saques."
         "429":
           "$ref": "#/components/responses/RateLimited"
@@ -12665,14 +12185,6 @@
         "pattern": "^req_[A-Za-z0-9]+$"
         "example": "req_3AbHiWSrsZBoaTg47OcMzC"
       "description": "Identificador desta tentativa HTTP, gerado pela Raims em cada resposta processada pela API. Informe este valor ao suporte ao investigar a requisição. Uma nova tentativa recebe outro identificador, inclusive em replay de idempotência."
-    "LegacyRequestId":
-      "required": true
-      "schema":
-        "type": "string"
-        "minLength": 5
-        "pattern": "^req_[A-Za-z0-9]+$"
-        "example": "req_3AbHiWSrsZBoaTg47OcMzC"
-      "description": "Alias de compatibilidade de Request-Id, com o mesmo valor. Prefira Request-Id em novas integrações."
     "IdempotencyKey":
       "schema":
         "type": "string"
@@ -16802,8 +16314,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "Forbidden":
       "description": "O acesso foi recusado pela situação da empresa, pelas permissões ou restrições de IP da chave, ou pelo uso de uma chave de Produção no console. Confira error.code e a orientação de error.message. Para empresa suspensa ou encerrada, contate sac@raims.com. Para cadastro pendente, consulte a situação no Dashboard. Revise as permissões e os IPs permitidos pela chave; o console exige uma chave de Sandbox."
       "content":
@@ -16868,8 +16378,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "RateLimited":
       "content":
         "application/json":
@@ -16882,8 +16390,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
         "Retry-After":
           "schema":
             "type": "integer"
@@ -16914,8 +16420,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "StoreUnavailable":
       "description": "O serviço está temporariamente indisponível. Confira o código e tente novamente. Em pedidos de estorno ou saque, consulte o histórico antes de enviar outro pedido."
       "content":
@@ -16992,8 +16496,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
         "Retry-After":
           "schema":
             "type": "integer"
@@ -17011,8 +16513,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "UnsupportedMediaType":
       "description": "Envie o corpo com Content-Type application/json."
       "content":
@@ -17026,8 +16526,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "UnprocessableEntity":
       "description": "A solicitação não pôde ser processada. IDEMPOTENCY_KEY_REUSED indica que a chave já foi usada com outros parâmetros. Para repetir a mesma intenção, preserve a chave e a requisição original."
       "content":
@@ -17044,8 +16542,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "RequestInProgress":
       "description": "Outra requisição está em andamento ou o resultado precisa ser conferido antes de repetir a tentativa. Confira error.code. Respeite Retry-After quando informado. Para IDEMPOTENCY_RESULT_UNKNOWN, consulte o recurso antes de tentar novamente com a mesma chave; não crie outra intenção."
       "content":
@@ -17080,8 +16576,6 @@
           "example": 1
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
     "InvalidAuthenticationEnvironment":
       "content":
         "application/json":
@@ -17113,8 +16607,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
       "description": "Ao usar OAuth, informe X-Raims-Environment com um dos valores aceitos pela operação. Com chave de API, o ambiente vem da própria chave."
     "BadGateway":
       "description": "O pedido foi recusado durante o processamento e não há devolução confirmada. Consulte o histórico da cobrança antes de tentar novamente."
@@ -17129,8 +16621,6 @@
       "headers":
         "Request-Id":
           "$ref": "#/components/headers/RequestId"
-        "X-Request-Id":
-          "$ref": "#/components/headers/LegacyRequestId"
   "securitySchemes":
     "BearerAuth":
       "type": "http"

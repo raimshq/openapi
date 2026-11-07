@@ -60,9 +60,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "content": {
@@ -480,9 +477,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -510,9 +504,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -598,9 +589,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
@@ -705,9 +693,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -735,9 +720,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -781,9 +763,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -863,9 +842,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
               },
@@ -899,9 +875,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
@@ -970,9 +943,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -1000,9 +970,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -1091,9 +1058,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -1156,9 +1120,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           }
@@ -1456,9 +1417,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -1689,9 +1647,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -1745,9 +1700,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           }
@@ -1816,9 +1768,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
@@ -2207,9 +2156,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -2476,9 +2422,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -2503,9 +2446,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -2534,9 +2474,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -2605,9 +2542,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           }
@@ -2693,9 +2627,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
               },
@@ -2725,9 +2656,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
@@ -2824,9 +2752,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3046,9 +2971,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3151,9 +3073,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3207,9 +3126,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           }
@@ -3267,9 +3183,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
               },
@@ -3303,9 +3216,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3439,9 +3349,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3470,9 +3377,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3500,9 +3404,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3573,9 +3474,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3604,9 +3502,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3634,9 +3529,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3672,9 +3564,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3782,9 +3671,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Idempotency-Key": {
                 "$ref": "#/components/headers/IdempotencyKey"
               },
@@ -3880,9 +3766,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -3910,9 +3793,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             }
           },
@@ -4011,9 +3891,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -4122,9 +3999,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -4202,9 +4076,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
@@ -4229,9 +4100,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -4253,9 +4121,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -4291,9 +4156,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O estado atual da cobrança ou de seu pagamento impede a simulação. Confira a cobrança e crie outra cobrança de teste para um resultado diferente."
@@ -4392,9 +4254,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -4472,9 +4331,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
@@ -4499,9 +4355,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -4523,9 +4376,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -4561,9 +4411,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O estado atual da cobrança ou de seu pagamento impede a simulação. Confira a cobrança e crie outra cobrança de teste para um resultado diferente."
@@ -4639,9 +4486,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -4697,9 +4541,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A requisição contém corpo ou parâmetros de consulta. Remova esses dados e envie somente a autenticação."
@@ -4772,9 +4613,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -4830,9 +4668,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A requisição contém corpo ou parâmetros de consulta. Remova esses dados e envie somente a autenticação."
@@ -4862,9 +4697,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O Sandbox não possui agência e número de conta financeira. Use chave de API ou autorização OAuth de Produção no servidor da integração para consultar esses dados."
@@ -4891,9 +4723,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A conta financeira não está aprovada e habilitada, ou a agência e o número da conta não estão disponíveis. Confira a situação da conta no Dashboard."
@@ -4971,9 +4800,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -5013,9 +4839,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
@@ -5045,9 +4868,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A requisição exige acesso autorizado em Produção e uma situação da empresa que permita o acesso."
@@ -5074,9 +4894,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A configuração de saque não foi encontrada para a empresa. Confira as configurações de saques no Dashboard antes de repetir a requisição."
@@ -5189,9 +5006,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -5253,9 +5067,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo inválido ou não foi possível identificar a origem da requisição. Confira error.code e, nas validações, corrija os campos indicados em error.details."
@@ -5294,9 +5105,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A atualização exige acesso autorizado em Produção e uma situação da empresa que permita alterações. Ativar ou alterar uma configuração ativa também exige uma conta financeira aprovada para saques. Confira os avisos da conta no Dashboard."
@@ -5323,9 +5131,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A configuração de saque não foi encontrada para a empresa. Confira as configurações de saques no Dashboard antes de repetir a requisição."
@@ -5367,9 +5172,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Não foi possível alterar a configuração nas condições atuais. Um destino próprio verificado é necessário para ativar. Se houver uma execução em andamento, consulte a configuração e tente a alteração novamente depois."
@@ -5479,9 +5281,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -5553,9 +5352,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O período ou os parâmetros da consulta não são aceitos. Escolha um período disponível e envie-o somente uma vez."
@@ -5636,9 +5432,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -5810,9 +5603,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -5852,9 +5642,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
@@ -5887,9 +5674,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -5916,9 +5700,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O pagamento não atende às condições para consulta dos dados ou emissão do recibo. Consulte a cobrança antes de tentar novamente."
@@ -5992,9 +5773,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -6034,9 +5812,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
@@ -6069,9 +5844,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -6098,9 +5870,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O pagamento não atende às condições de emissão do recibo. Consulte a cobrança antes de tentar novamente."
@@ -6174,9 +5943,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -6216,9 +5982,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança é inválido. Use o ID retornado pela API."
@@ -6251,9 +6014,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -6307,9 +6067,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O boleto não está disponível para download. A cobrança precisa usar boleto, com os dados de emissão disponíveis e em estado que permita obter o documento. Consulte a cobrança para conferir o meio, a emissão e o andamento do boleto antes de tentar novamente."
@@ -6439,9 +6196,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -6491,9 +6245,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -6587,9 +6338,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo ou parâmetro inválido, ou a origem da requisição não pôde ser identificada. Confira error.code e error.message. Quando error.details estiver presente, corrija os campos indicados antes de tentar novamente."
@@ -6617,9 +6365,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -6736,9 +6481,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Retry-After": {
                 "schema": {
@@ -6934,9 +6676,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -7013,9 +6752,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
@@ -7043,9 +6779,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -7265,9 +6998,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -7307,9 +7037,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
@@ -7337,9 +7064,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -7463,9 +7187,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -7537,9 +7258,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O período não foi aceito ou a URL contém um parâmetro inválido. Confira error.details para identificar o campo e o motivo."
@@ -7642,9 +7360,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -7690,9 +7405,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Os dados da imagem não atendem aos formatos, tamanhos ou dimensões aceitos. Corrija os campos indicados nos detalhes."
@@ -7725,9 +7437,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A conta não foi encontrada para a chave informada. Confira a credencial antes de repetir a requisição."
@@ -7836,9 +7545,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -7884,9 +7590,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Os dados da imagem não atendem aos formatos, tamanhos ou dimensões aceitos. Corrija os campos indicados nos detalhes."
@@ -7919,9 +7622,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A conta não foi encontrada para a chave informada. Confira a credencial antes de repetir a requisição."
@@ -8015,9 +7715,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -8063,9 +7760,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador é inválido, ou a requisição contém corpo ou parâmetros de consulta. Corrija os dados indicados nos detalhes."
@@ -8098,9 +7792,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O envio de imagem não foi encontrado para a empresa e o ambiente da chave. Confira o identificador recebido na preparação."
@@ -8133,9 +7824,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O envio já foi associado ao checkout e não pode ser descartado por este endpoint. Use a atualização da personalização para remover a imagem, quando necessário."
@@ -8308,9 +7996,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -8366,9 +8051,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
@@ -8401,9 +8083,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A configuração da conta não foi encontrada para a consulta. Confira o acesso à empresa antes de repetir a requisição."
@@ -8571,9 +8250,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -8625,9 +8301,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -8721,9 +8394,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O corpo contém um campo desconhecido, um e-mail inválido, uma cor fora do formato ou um identificador de envio inválido. Corrija os campos indicados nos detalhes."
@@ -8772,9 +8442,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A configuração ou um envio de imagem não foi encontrado para a empresa e o ambiente da chave. Use um identificador do tipo correto, recebido ao preparar o envio."
@@ -8834,9 +8501,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O envio ainda não pode ser aplicado, expirou ou já foi substituído. Confira error.code antes de corrigir o envio; um novo arquivo exige uma nova autorização."
@@ -9021,9 +8685,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -9063,9 +8724,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da contestação é inválido. Use o id completo retornado pela listagem."
@@ -9093,9 +8751,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Contestação não encontrada na empresa e no ambiente autenticado. A resposta também é usada quando o caso não está disponível para a autenticação utilizada."
@@ -9326,9 +8981,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -9437,9 +9089,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um filtro ou cursor é inválido. Corrija os campos indicados em error.details antes de repetir. After e before preenchidos juntos não são aceitos."
@@ -9530,9 +9179,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -9602,9 +9248,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Identificador inválido, corpo não permitido ou e-mail do destinatário inválido. Para falhas na requisição, confira os detalhes; para e-mail inválido, confira o endereço associado à cobrança."
@@ -9634,9 +9277,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A autenticação ou a situação da empresa não permite o envio. Para empresa com cadastro pendente, o destinatário precisa ser o e-mail principal da conta."
@@ -9658,9 +9298,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Link não encontrado na empresa e no ambiente autenticado."
@@ -9711,9 +9348,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou a pausa do link. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
@@ -9776,9 +9410,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O limite da API ou o intervalo entre reenvios foi atingido. Aguarde Retry-After e confira Raims-Rate-Limited-Reason. O motivo resource-specific indica o intervalo próprio do reenvio de e-mail."
@@ -9883,9 +9514,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -9933,9 +9561,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -10076,9 +9701,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo do pedido é inválido. Confira em error.details o nome público do campo, o código e a correção indicada."
@@ -10113,9 +9735,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -10166,9 +9785,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou outra requisição em andamento. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
@@ -10304,9 +9920,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -10398,9 +10011,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um filtro ou cursor é inválido. Corrija os campos indicados em error.details. Para reiniciar a listagem, remova after e before."
@@ -10652,9 +10262,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -10693,9 +10300,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador do link ou um parâmetro da requisição é inválido. Confira error.details e use o id retornado na criação ou na listagem."
@@ -10723,9 +10327,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Link não encontrado na empresa e no ambiente autenticado."
@@ -10923,9 +10524,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -11086,9 +10684,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador ou um campo de configuração é inválido. Confira error.details. Não envie uma URL preenchida junto do seu comando de limpeza com true."
@@ -11116,9 +10711,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Link não encontrado na empresa e no ambiente autenticado."
@@ -11169,9 +10761,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A mensagem identifica se o impedimento é o estado da cobrança, seu vencimento ou outra requisição em andamento. Quando o estado impede a ação, informa o estado atual e os aceitos. Consulte a cobrança vinculada antes de tentar novamente."
@@ -11254,9 +10843,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -11296,9 +10882,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador do estorno é inválido. Use o ID retornado pela API."
@@ -11331,9 +10914,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Estorno ou dados da cobrança original não encontrados na empresa e no ambiente autenticado."
@@ -11360,9 +10940,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O estorno não está concluído ou não tem data de conclusão confirmada. Consulte o estorno antes de tentar baixar o comprovante novamente."
@@ -11529,9 +11106,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -11592,9 +11166,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um parâmetro de consulta inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
@@ -11802,9 +11373,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -11844,9 +11412,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo ou parâmetro inválido. Confira error.details e corrija os dados indicados antes de tentar novamente."
@@ -11874,9 +11439,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Estorno não encontrado na empresa e no ambiente autenticado."
@@ -11963,9 +11525,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -12049,9 +11608,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador do estorno ou a requisição não é válido. Esta requisição não recebe corpo nem parâmetros de consulta. Confira os campos em error.details."
@@ -12076,9 +11632,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -12100,9 +11653,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O estorno não foi encontrado no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -12124,9 +11674,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Retry-After": {
                 "schema": {
@@ -12225,9 +11772,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -12311,9 +11855,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador do estorno ou a requisição não é válido. Esta requisição não recebe corpo nem parâmetros de consulta. Confira os campos em error.details."
@@ -12338,9 +11879,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -12362,9 +11900,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O estorno não foi encontrado no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -12386,9 +11921,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Retry-After": {
                 "schema": {
@@ -12532,9 +12064,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -12612,9 +12141,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador, a ação, o resultado ou a requisição não é válido. Confira os campos indicados em error.details."
@@ -12639,9 +12165,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -12663,9 +12186,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -12687,9 +12207,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança ou o cenário não permite essa etapa. Prepare o cenário antes da ação; para cancellation, a cobrança deve estar aberta e ter Pix ou boleto já emitido. Use outra cobrança para testar um cenário diferente."
@@ -12830,9 +12347,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -12910,9 +12424,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador, a ação, o resultado ou a requisição não é válido. Confira os campos indicados em error.details."
@@ -12937,9 +12448,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -12961,9 +12469,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -12985,9 +12490,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança ou o cenário não permite essa etapa. Prepare o cenário antes da ação; resolva somente uma pendência já aplicada. Use outra cobrança para testar um cenário diferente."
@@ -13227,9 +12729,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -13329,9 +12828,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -13398,9 +12894,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador ou o meio de pagamento não é válido ou não está habilitado. Confira os campos indicados em error.details."
@@ -13425,9 +12918,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -13449,9 +12939,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -13487,9 +12974,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não permite essa emissão. Confira seu estado, o vencimento, o meio de pagamento e os dados do cliente antes de tentar novamente."
@@ -13591,9 +13075,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -13671,9 +13152,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador da cobrança ou a requisição não é válido. Confira os campos indicados em error.details. Esta requisição não recebe corpo nem parâmetros de consulta."
@@ -13698,9 +13176,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A simulação aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -13722,9 +13197,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não foi encontrada no Sandbox da empresa. IDs de outra empresa ou de Produção recebem a mesma resposta."
@@ -13746,9 +13218,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A cobrança não permite a compensação simulada. Use uma cobrança aberta com boleto já emitido e confira se há emissão ou cancelamento pendente antes de tentar novamente."
@@ -13870,9 +13339,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -13922,9 +13388,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -14018,9 +13481,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo ou parâmetro inválido, ou a origem da requisição não pôde ser identificada. Confira error.code e error.message. Quando error.details estiver presente, corrija os campos indicados antes de tentar novamente."
@@ -14045,9 +13505,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta requisição aceita somente Sandbox, com chave de API ou autorização OAuth desse ambiente."
@@ -14069,9 +13526,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Cobrança não encontrada na empresa e no ambiente autenticado."
@@ -14170,9 +13624,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Retry-After": {
                 "schema": {
@@ -14286,9 +13737,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -14328,9 +13776,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Identificador de lançamento inválido."
@@ -14363,9 +13808,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Lançamento não encontrado na empresa e no ambiente autenticado."
@@ -14568,9 +14010,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -14610,9 +14049,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um filtro ou cursor inválido. Confira error.details antes de repetir a requisição."
@@ -14701,9 +14137,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -14738,9 +14171,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -14842,9 +14272,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -14879,9 +14306,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador ou outro parâmetro recebido é inválido. Confira os detalhes antes de repetir a requisição."
@@ -14909,9 +14333,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O webhook não foi encontrado na empresa e no ambiente autenticado."
@@ -15016,9 +14437,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -15064,9 +14482,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador, o corpo ou um campo da requisição é inválido."
@@ -15099,9 +14514,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Webhook não encontrado na empresa e no ambiente autenticado."
@@ -15145,9 +14557,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O webhook está inativo ou outra requisição está em andamento. Ative o webhook antes de alterar a pausa. Se houver requisição em andamento, aguarde o prazo de Retry-After."
@@ -15273,9 +14682,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -15310,9 +14716,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -15413,9 +14816,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -15462,9 +14862,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -15522,9 +14919,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O cadastro encontrou um limite ou uma configuração já existente. Confira a condição informada antes de repetir a requisição."
@@ -15619,9 +15013,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -15656,9 +15047,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -15686,9 +15074,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
@@ -15792,9 +15177,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -15835,9 +15217,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -15865,9 +15244,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
@@ -15910,9 +15286,6 @@
               },
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A atualização conflitou com outra requisição em andamento ou com uma URL já cadastrada. Confira o código do erro antes de tentar novamente."
@@ -15985,9 +15358,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -16028,9 +15398,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -16058,9 +15425,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
@@ -16158,9 +15522,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -16201,9 +15562,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -16231,9 +15589,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
@@ -16322,9 +15677,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -16371,9 +15723,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Um campo, filtro ou identificador está inválido. Confira os detalhes antes de repetir a requisição."
@@ -16401,9 +15750,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O recurso não foi encontrado na empresa e no ambiente autenticado."
@@ -16439,9 +15785,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O webhook precisa estar ativo e o teste deve ser aceito dentro do prazo. Confira a condição informada antes de repetir a requisição."
@@ -16525,9 +15868,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -16567,9 +15907,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O identificador informado não corresponde ao formato de um destino de saque. Copie o ID retornado pela listagem."
@@ -16599,9 +15936,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
@@ -16628,9 +15962,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O destino não foi encontrado entre os destinos disponíveis da empresa. Consulte novamente a listagem para conferir os destinos atuais."
@@ -16758,9 +16089,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -16821,9 +16149,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A consulta contém parâmetros inválidos. Confira os detalhes do campo e use os cursores retornados por esta listagem."
@@ -16853,9 +16178,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Destinos de saque exigem Produção. Use chave de API ou autorização OAuth de Produção no servidor da integração; o console desta documentação aceita somente Sandbox."
@@ -16945,9 +16267,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Cache-Control": {
                 "schema": {
@@ -17088,9 +16407,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -17171,9 +16487,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -17243,9 +16556,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um campo inválido ou não foi possível identificar a origem da requisição. Confira error.code e, nas validações, error.details antes de corrigir o envio."
@@ -17302,9 +16612,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A autenticação ou a situação da conta não permite esta solicitação. Saques exigem acesso autorizado em Produção e uma conta autorizada a retirar valores. Confira os avisos da conta no Dashboard."
@@ -17403,9 +16710,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               },
               "Location": {
                 "schema": {
@@ -17659,9 +16963,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -17701,9 +17002,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um parâmetro inválido. Confira error.details para identificar o campo e o formato aceito."
@@ -17843,9 +17141,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -17885,9 +17180,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Há um parâmetro inválido. Confira error.details para identificar o campo e o formato aceito."
@@ -17920,9 +17212,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "O saque não foi encontrado na empresa e no ambiente autenticado."
@@ -17996,9 +17285,6 @@
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
               },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
-              },
               "Cache-Control": {
                 "schema": {
                   "type": "string",
@@ -18038,9 +17324,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "Esta consulta não aceita corpo nem parâmetros de consulta. Remova os dados indicados nos detalhes do erro."
@@ -18070,9 +17353,6 @@
             "headers": {
               "Request-Id": {
                 "$ref": "#/components/headers/RequestId"
-              },
-              "X-Request-Id": {
-                "$ref": "#/components/headers/LegacyRequestId"
               }
             },
             "description": "A consulta exige acesso autorizado em Produção. O Sandbox não oferece este resumo de saques."
@@ -18170,16 +17450,6 @@
           "example": "req_3AbHiWSrsZBoaTg47OcMzC"
         },
         "description": "Identificador desta tentativa HTTP, gerado pela Raims em cada resposta processada pela API. Informe este valor ao suporte ao investigar a requisição. Uma nova tentativa recebe outro identificador, inclusive em replay de idempotência."
-      },
-      "LegacyRequestId": {
-        "required": true,
-        "schema": {
-          "type": "string",
-          "minLength": 5,
-          "pattern": "^req_[A-Za-z0-9]+$",
-          "example": "req_3AbHiWSrsZBoaTg47OcMzC"
-        },
-        "description": "Alias de compatibilidade de Request-Id, com o mesmo valor. Prefira Request-Id em novas integrações."
       },
       "IdempotencyKey": {
         "schema": {
@@ -23464,9 +22734,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23565,9 +22832,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23588,9 +22852,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           },
           "Retry-After": {
             "schema": {
@@ -23634,9 +22895,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23754,9 +23012,6 @@
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
           },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
-          },
           "Retry-After": {
             "schema": {
               "type": "integer",
@@ -23783,9 +23038,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23807,9 +23059,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23836,9 +23085,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23891,9 +23137,6 @@
           },
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       },
@@ -23942,9 +23185,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         },
         "description": "Ao usar OAuth, informe X-Raims-Environment com um dos valores aceitos pela operação. Com chave de API, o ambiente vem da própria chave."
@@ -23967,9 +23207,6 @@
         "headers": {
           "Request-Id": {
             "$ref": "#/components/headers/RequestId"
-          },
-          "X-Request-Id": {
-            "$ref": "#/components/headers/LegacyRequestId"
           }
         }
       }
