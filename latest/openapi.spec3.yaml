@@ -643,7 +643,7 @@
             "example": "ch_3AbHiWSrsZBoaTg47OcMzC"
       "responses":
         "200":
-          "description": "Revogação confirmada, com status cancelado (7). O histórico continua disponível para consulta. Repetir a requisição retorna a mesma confirmação. A revogação não devolve valores pagos."
+          "description": "Revogação confirmada, com status cancelado (7). O histórico continua disponível para consulta. Uma nova execução sobre uma cobrança já cancelada confirma o cancelamento. Uma repetição com a mesma Idempotency-Key pode devolver a resposta original. Use GET /v1/charges/{id} para consultar o estado atual. A revogação não devolve valores pagos."
           "headers":
             "Cache-Control":
               "description": "Os dados da cobrança e as instruções de pagamento não devem ser armazenados em cache."
@@ -845,7 +845,7 @@
       "tags":
         - "Cobranças"
       "summary": "Listar cobranças"
-      "description": "Lista cobranças da empresa e do ambiente autenticado, com filtros e paginação por cursor. Para avançar, use page.next_after em after enquanto page.has_next for true, mantendo os filtros e a ordenação. Alterações de status podem levar alguns segundos para aparecer nos filtros; aguarde antes de consultar novamente."
+      "description": "Lista cobranças da empresa e do ambiente autenticado com filtros na URL e paginação por cursor. Os filtros status, email, external_reference, due_gte, due_lte, paid_gte e paid_lte podem omitir gravações recentes. O mesmo vale para customer_id com ordenação por valor ou data ou com período de criação, sem identifier. Para conferir uma cobrança conhecida, use GET /v1/charges/{id}."
       "security":
         -
           "BearerAuth": []
@@ -904,7 +904,7 @@
           "name": "external_reference"
           "in": "query"
           "required": false
-          "description": "Filtra pela referência atual da cobrança no seu sistema, com igualdade do valor completo, incluindo maiúsculas, minúsculas e acentos. Vazio ou ausência não aplica o filtro. Pode ser combinado com os demais filtros; preserve o valor ao navegar por cursor. Após criar ou editar uma cobrança, pode levar alguns segundos para a busca refletir a referência."
+          "description": "Filtra pela referência atual da cobrança no seu sistema. Compara o valor completo, com distinção de maiúsculas, minúsculas e acentos. Cobranças novas ou alteradas podem ficar temporariamente fora dos resultados. Vazio ou ausência ignora o filtro. Mantenha o valor ao navegar por cursor."
           "schema":
             "type": "string"
             "maxLength": 120
@@ -922,7 +922,7 @@
           "name": "status"
           "in": "query"
           "required": false
-          "description": "Filtra por um ou mais códigos separados por vírgula, como 0,1. 0 criado, 1 aguardando pagamento, 2 autorizado, 3 em processamento, 4 pago, 5 parcialmente devolvido, 6 devolvido, 7 cancelado, 8 expirado, 9 falha, 10 chargeback, 11 chargeback em análise, 12 chargeback perdido e 13 chargeback ganho. Pode levar alguns segundos para refletir alterações."
+          "description": "Filtra por um ou mais códigos separados por vírgula, como 0,1. 0 criado, 1 aguardando pagamento, 2 autorizado, 3 em processamento, 4 pago, 5 parcialmente devolvido, 6 devolvido, 7 cancelado, 8 expirado, 9 falha, 10 chargeback, 11 chargeback em análise, 12 chargeback perdido e 13 chargeback ganho. A busca pode demorar a refletir o status atual."
           "schema":
             "type": "string"
             "maxLength": 64
@@ -2074,7 +2074,7 @@
       "tags":
         - "Clientes"
       "summary": "Listar clientes"
-      "description": "Lista os clientes da empresa e do ambiente autenticado conforme os filtros informados, com paginação por cursor. Envie os parâmetros na URL, sem corpo na requisição."
+      "description": "Lista os clientes da empresa e do ambiente autenticado, com filtros na URL e paginação por cursor. Os filtros name e external_reference podem omitir clientes recém-criados ou alterados. Para conferir um cadastro conhecido, use GET /v1/customers/{id}."
       "security":
         -
           "BearerAuth": []
@@ -2123,7 +2123,7 @@
           "name": "name"
           "in": "query"
           "required": false
-          "description": "Busca pelo nome do cliente, com os cadastros mais recentes primeiro. Deixe vazio para ignorar este filtro."
+          "description": "Busca pelo nome do cliente, com os cadastros mais recentes primeiro. Cadastros novos ou alterados podem ficar temporariamente fora dos resultados. Após renomear um cliente, a busca pelo nome anterior ainda pode devolver o cadastro com o nome novo. Deixe vazio para ignorar este filtro."
           "schema":
             "type": "string"
             "minLength": 2
@@ -2155,7 +2155,7 @@
             "type": "string"
             "maxLength": 120
             "example": "cliente_12345"
-          "description": "Filtra pela referência atual do cliente no seu sistema, com igualdade do valor completo, incluindo maiúsculas, minúsculas e acentos. Pode ser combinada com os demais filtros. Após criar ou editar o cliente, a busca pode levar alguns segundos para refletir a referência. Mantenha o valor ao navegar por cursor."
+          "description": "Filtra pela referência atual do cliente no seu sistema. Compara o valor completo, com distinção de maiúsculas, minúsculas e acentos. Cadastros novos ou alterados podem ficar temporariamente fora dos resultados. Mantenha o valor ao navegar por cursor."
       "responses":
         "200":
           "description": "Página de clientes. Se nenhum cliente atender aos filtros, list será um array vazio."
@@ -2293,7 +2293,7 @@
                 "$ref": "#/components/schemas/ErrorResponse"
               "examples":
                 "search_unavailable":
-                  "summary": "Busca por nome indisponível"
+                  "summary": "Busca de clientes indisponível"
                   "value":
                     "error":
                       "code": "CLIENT_SEARCH_INDEX_UNAVAILABLE"
@@ -3812,7 +3812,7 @@
       "tags":
         - "Informações financeiras"
       "summary": "Consultar recebimentos previstos"
-      "description": "Consulte a estimativa de recebimentos pendentes no período e o saldo total projetado. Os valores são estimativas e não indicam disponibilidade para saque."
+      "description": "Consulte os recebimentos previstos no período e o saldo total projetado. Os valores são atualizados em segundo plano. Confira updated_at para saber quando a previsão foi atualizada. Para verificar o saldo disponível para saque, consulte GET /v1/balances."
   "/v1/balances":
     "get":
       "operationId": "GetBalance"
@@ -5132,7 +5132,7 @@
       "tags":
         - "Cobranças"
       "summary": "Consultar estatísticas de cobranças"
-      "description": "Consulte quantidades, valores e taxa de pagamento das cobranças para acompanhar seus recebimentos no ERP ou sistema de gestão. A consulta considera a empresa e o ambiente autenticado. Os dados podem levar alguns segundos para refletir alterações nas cobranças."
+      "description": "Consulta quantidades, valores e taxa de pagamento das cobranças da empresa e do ambiente autenticado. Os totais são atualizados em segundo plano. Para confirmar uma cobrança específica, use GET /v1/charges/{id}."
   "/v1/accounts/checkout_settings/logo_uploads":
     "post":
       "operationId": "CreateCheckoutLogoUpload"
@@ -5832,7 +5832,7 @@
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
               "$ref": "#/components/headers/IdempotencyReplayed"
-          "description": "A configuração foi recebida, e ao menos uma imagem ainda está em processamento. Consulte a personalização até a imagem estar pronta ou a resposta indicar falha. A imagem anterior continua em uso enquanto a troca não for concluída."
+          "description": "Ao menos uma alteração de imagem ainda está em processamento. Use GET /v1/accounts/checkout_settings para acompanhar. ready confirma que a nova imagem está disponível, absent confirma a remoção e failed indica que é preciso conferir error_code. Enquanto a alteração é processada, a imagem anterior permanece em uso quando houver."
         "400":
           "content":
             "application/json":
@@ -6615,7 +6615,7 @@
           "$ref": "#/components/responses/InternalError"
         "503":
           "$ref": "#/components/responses/StoreUnavailable"
-          "description": "Não foi possível confirmar o pedido de envio. Aguarde e tente novamente."
+          "description": "O pedido pode já ter sido registrado. Se repetir a mesma solicitação enviada com Idempotency-Key, preserve a chave original e respeite Retry-After quando informado."
       "tags":
         - "Links de pagamentos"
       "summary": "Enviar link por e-mail"
@@ -9863,7 +9863,7 @@
       "tags":
         - "Extrato"
       "summary": "Recuperar extrato"
-      "description": "Consulte os lançamentos do extrato da empresa e do ambiente autenticado. Filtre por período, tipo de lançamento ou referência e percorra os resultados com os cursores retornados. Valores positivos representam entradas ou liberações; valores negativos representam saídas, tarifas ou bloqueios. Uma confirmação financeira pode levar alguns instantes para aparecer no extrato."
+      "description": "Consulte os lançamentos do extrato da empresa e do ambiente autenticado. Filtre por período, tipo de lançamento ou referência e percorra os resultados com os cursores retornados. Valores positivos representam entradas ou liberações. Valores negativos representam saídas, tarifas ou bloqueios. A confirmação financeira pode anteceder o lançamento no extrato. Para acompanhar o registro do lançamento, use o evento statement.created."
   "/v1/webhook_event_types":
     "get":
       "operationId": "ListWebhookEventTypes"
@@ -10955,7 +10955,7 @@
             "Location":
               "schema":
                 "type": "string"
-              "description": "Caminho para acompanhar a entrega."
+              "description": "Caminho que identifica a entrega no histórico. Para conferir o teste, use delivery_id e os registros do receptor."
             "Idempotency-Key":
               "$ref": "#/components/headers/IdempotencyKey"
             "Idempotency-Replayed":
@@ -11027,7 +11027,7 @@
       "tags":
         - "Webhooks"
       "summary": "Enviar um evento de teste"
-      "description": "Envie webhook.test para conferir o recebimento e a validação da assinatura de um webhook ativo. A requisição não recebe corpo. O teste faz uma tentativa HTTP em até cinco minutos e não altera cobranças, saldo ou a contagem de falhas do destino. O aceite do pedido não confirma a entrega. Confira o recebimento nos registros do receptor."
+      "description": "Solicite webhook.test para conferir o recebimento e a validação da assinatura de um webhook ativo. A requisição não recebe corpo. A Raims agenda uma tentativa HTTPS em segundo plano. O teste pode expirar sem envio após cinco minutos. O teste não altera cobranças, saldo ou a contagem de falhas do destino. Confira os registros do receptor para verificar a entrega."
   "/v1/withdrawal_destinations/{id}":
     "get":
       "operationId": "GetWithdrawalDestination"
@@ -12468,7 +12468,7 @@
           "maxLength": 100
           "pattern": "^cus_[A-Za-z0-9]+$"
           "example": "cus_1Q2W3E4R5T6Y7U8I9O0P"
-          "description": "ID de um cliente da empresa e do ambiente autenticado. Copie o id retornado no cadastro ou na consulta. Pix direto exige CPF/CNPJ válido. Boleto direto exige nome, e-mail válido, CPF/CNPJ e endereço, incluindo CEP e número; complete esses dados no cadastro do cliente."
+          "description": "ID de um cliente da empresa e do ambiente autenticado. Use o id retornado no cadastro assim que receber a resposta ou consulte o cliente pelo ID. Pix direto exige CPF/CNPJ válido. Boleto direto exige nome, e-mail válido, CPF/CNPJ e endereço, incluindo CEP e número."
         "amount_cents":
           "type": "integer"
           "format": "int64"
