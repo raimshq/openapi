@@ -19088,7 +19088,7 @@
                         "period_remaining_cents": 4875000,
                         "request_maximum_amount_cents": 4875000,
                         "period": "day",
-                        "period_ends_at": 1792054800
+                        "period_ends_at": 1792105200
                       }
                     }
                   },
@@ -27495,7 +27495,7 @@
                 "type": "null"
               }
             ],
-            "description": "Limites Pix e consumo do período atual, ou null quando não houver limites disponíveis para consulta. No Sandbox, retorna null. Esse valor não significa que o saque esteja livre de limites."
+            "description": "Limites Pix e consumo do período atual para o contexto do destino padrão, interno ou externo. Retorna null quando o contexto não puder ser identificado ou no Sandbox."
           }
         },
         "description": "Condições atuais para planejar a retirada. Valores monetários usam centavos de real. O aceite do saque depende da conferência das condições no momento da solicitação."
@@ -28972,13 +28972,13 @@
             "type": "integer",
             "format": "int64",
             "minimum": 0,
-            "description": "Limite diário de saques, em centavos de real. O dia de saque vai das 06:00 às 06:00 do dia seguinte, no horário de São Paulo."
+            "description": "Limite de saques por dia civil, em centavos de real. A nova cota é liberada às 00:01, no horário de São Paulo."
           },
           "night_limit_cents": {
             "type": "integer",
             "format": "int64",
             "minimum": 0,
-            "description": "Limite noturno de saques, em centavos de real, das 20:00 às 06:00 do dia seguinte. Esse valor faz parte do limite diário."
+            "description": "Limite noturno de saques, em centavos de real. O consumo acumula das 20:00 às 06:00 do dia seguinte, inclusive na virada do dia."
           },
           "period_limit_cents": {
             "type": "integer",
@@ -29013,10 +29013,10 @@
             "format": "int64",
             "minimum": 0,
             "maximum": 253402300799,
-            "description": "Término do período vigente, em segundos Unix UTC. Consulte novamente após esse instante para conferir as condições atualizadas."
+            "description": "Próxima virada dos limites, em segundos Unix UTC. Consulte novamente após esse instante para conferir as condições atualizadas."
           }
         },
-        "description": "Limites e consumo de saque no período atual, pelo horário de São Paulo. O limite noturno faz parte do diário."
+        "description": "Limites e consumo de saque no período atual, pelo horário de São Paulo. Durante a noite, o saque precisa caber no restante diário e no noturno."
       },
       "WithdrawalFailureReason": {
         "type": "object",
